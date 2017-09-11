@@ -438,7 +438,7 @@ var a, _, c, d int = 1, 2, 3, 4
 </details>
 
 <details>
-<summary>变量</summary>
+<summary>变量的类型转换</summary>
 
 ```go
 // 只能类型显式转换
