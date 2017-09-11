@@ -29,13 +29,21 @@ Go语言快速入门
 
 ### CentOS7中安装
 
+<details>
+<summary>yum安装</summary>
+
 CentOS7 可以只用使用yum安装
 
 ```bash
 yum install golang  
 ```
 
-源码安装
+</details>
+
+<details>
+<summary>源码安装</summary>
+
+源码下载
 
 ```bash
 wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
@@ -69,6 +77,9 @@ source /etc/profile
 cat $GOROOT/VERSION  # 查看版本
 $GOROOT/src/all.bash # 测试用例正确
 ```
+
+</details>
+
 
 ## 编程基础
 
