@@ -20,6 +20,7 @@ Go语言快速入门
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
+- [资源导航](#资源导航)
 
 <!-- /TOC -->
 
@@ -450,3 +451,48 @@ b := int(a)
 
 </details>
 
+## 资源导航
+
+<details>
+<summary>官方</summary>
+
+- [Playground](http://play.golang.org)：Go 语言代码在线运行
+
+</details>
+
+<details>
+<summary>国内镜像</summary>
+
+- [Go 指南国内镜像](http://tour.golangtc.com/)
+- [Go 语言国内下载镜像](http://www.golangtc.com/download)
+- [Go 官方网站国内镜像](http://docs.studygolang.com/)
+
+</details>
+
+<details>
+<summary>Web 框架</summary>
+
+- [Macaron](https://go-macaron.com/)：模块化 Web 框架
+- [Beego](http://beego.me/)：重量级 Web 框架
+- [Revel](https://github.com/revel/revel)：较早成熟的重量级 Web 框架
+- [Martini](https://github.com/go-martini/martini): 一个强大为了编写模块化 Web 应用而生的 Go 语言框架
+
+</details>
+
+<details>
+<summary>ORM 以及数据库驱动</summary>
+
+- [xorm](https://github.com/go-xorm/xorm)：支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
+- [mgo](http://labix.org/mgo)：MongoDB 官方推荐驱动
+
+</details>
+
+<details>
+<summary>辅助站点</summary>
+
+- [Go Walker](https://gowalker.org)：Go 语言在线 API 文档
+- [gobuild.io](http://gobuild.io/)：Go 语言在线二进制编译与下载
+- [Rego](http://regoio.herokuapp.com/)：Go 语言正则在线测试
+- [gopm.io](https://gopm.io)：科学下载第三方包
+
+</details>
