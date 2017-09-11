@@ -9,43 +9,21 @@ Go语言快速入门
 - 在 GOPATH 目录下新建 bin 目录，该目录用于存放项目中所生成的可执行文件。
 - 在 GOPATH 目录下新建 pkg 目录，该目录用于存放编译生成的库文件。
 
+
+<details>
+<summary>点击展开目录菜单</summary>
+
 <!-- TOC -->
 
 - [安装](#安装)
   - [CentOS7中安装](#centos7中安装)
 - [编程基础](#编程基础)
-  - [内置关键字](#内置关键字)
-  - [注释方法](#注释方法)
-  - [包导入](#包导入)
-  - [包别名](#包别名)
-  - [省略调用](#省略调用)
-  - [可见性规则](#可见性规则)
 - [基本类型](#基本类型)
-  - [布尔型](#布尔型)
-  - [整形](#整形)
-  - [8位整型](#8位整型)
-  - [字节型](#字节型)
-  - [16位整型](#16位整型)
-  - [32位整型](#32位整型)
-  - [64位整型](#64位整型)
-  - [浮点型](#浮点型)
-  - [复数](#复数)
-  - [指针整数型](#指针整数型)
-  - [数组类型](#数组类型)
-  - [结构类型](#结构类型)
-  - [字符串类型](#字符串类型)
-  - [接口类型](#接口类型)
-  - [函数类型](#函数类型)
-  - [引用类型](#引用类型)
-    - [切片](#切片)
-    - [Map](#map)
-    - [通道](#通道)
-  - [类型别名](#类型别名)
-- [常量](#常量)
-- [变量](#变量)
-- [变量的类型转换](#变量的类型转换)
+- [常量变量](#常量变量)
 
 <!-- /TOC -->
+
+</details>
 
 ## 安装
 
@@ -94,7 +72,9 @@ $GOROOT/src/all.bash # 测试用例正确
 
 ## 编程基础
 
-### 内置关键字
+
+<details>
+<summary>内置关键字</summary>
 
 ```go
 break      default       func      interface    select
@@ -104,7 +84,10 @@ const      fallthrough   if        range        type
 continue   for           import    retrun       var
 ```
 
-### 注释方法
+</details>
+
+<details>
+<summary>注释方法</summary>
 
 ```go
 // 单行注释
@@ -114,7 +97,10 @@ continue   for           import    retrun       var
 */
 ```
 
-### 包导入
+</details>
+
+<details>
+<summary>包导入</summary>
 
 ```go
 import "fmt"
@@ -132,7 +118,10 @@ import (
 )
 ```
 
-### 包别名
+</details>
+
+<details>
+<summary>包别名</summary>
 
 ```go
 import(
@@ -146,7 +135,11 @@ import ff "fmt"
 ff.Println('Hello World!')
 ```
 
-### 省略调用
+</details>
+
+
+<details>
+<summary>省略调用</summary>
 
 ```go
 import(
@@ -158,73 +151,108 @@ func main() {
 }
 ```
 
-### 可见性规则
+</details>
+
+
+<details>
+<summary>可见性规则</summary>
 
 Go语言中约定使用 **大小写** 来决定常量、变量、类型、接口、结构或函数是否可以被外部包所调用
 
 - 函数名字首字母 **小写** 即为 `private` 私有的
 - 函数名字首字母 **大写** 即为 `public` 公有
 
+</details>
+
 ## 基本类型
 
-### 布尔型
+<details>
+<summary>布尔型</summary>
 
 - 长度：1字节
 - 取值范围：true/false
 - 只能使用true/false值，不能使用数字代替布尔值
 
-### 整形
+</details>
+
+<details>
+<summary>整形 int/uint</summary>
 
 - int/uint
 - 根据平台可能为32/64位
 
-### 8位整型
+</details>
+
+<details>
+<summary>8位整型 int8/uint8</summary>
 
 - int8/uint8
 - 长度：1字节
 - 取值范围：-128~127/0~255
 
-### 字节型 
+</details>
+
+<details>
+<summary>字节型 byte</summary>
 
 - byte(uint8别名)
 
-### 16位整型
+</details>
+
+<details>
+<summary>16位整型 int16/uint16</summary>
 
 - int16/uint16
 - 长度：2字节
 - 取值范围：-32768~32767/0~65535
 
-### 32位整型
+</details>
+
+<details>
+<summary>32位整型 int32(别名rune)/uint32</summary>
 
 - int32(别名rune)/uint32
 - 长度：4字节
 - 取值范围：-2^32/2~2^32/2-1/0~2^32-1
 
-### 64位整型
+</details>
+
+<details>
+<summary>64位整型 int64/uint64</summary>
 
 - int64/uint64
 - 长度：8字节
 - 取值范围：-2^64/2~2^64/2-1/0~2^64-1
 
-### 浮点型
+</details>
+
+<details>
+<summary>浮点型 int64/uint64</summary>
 
 - float32/float64
 - 长度：4/8字节
 - 小数位：精确到 7/15 位小数
 
-### 复数
+</details>
+
+<details>
+<summary>复数 complex64/complex128</summary>
 
 - complex64/complex128
 - 长度：8/16
 
-### 指针整数型
+</details>
+
+<details>
+<summary>指针整数型 uintptr</summary>
 
 - uintptr
 - 保存指正的 32 位或者 64 位整数型
 
-### 数组类型
+</details>
 
-- array
+<details>
+<summary>数组类型 array</summary>
 
 ```go
 // 声明一个长度为5的整数数组
@@ -236,31 +264,47 @@ var array [5]int
 array := [5]int{12, 123, 1234, 12345, 123456}
 ```
 
-### 结构类型
+</details>
+
+<details>
+<summary>结构类型 struct</summary>
 
 - struct
 
-### 字符串类型
+</details>
 
-- string 
+<details>
+<summary>字符串类型 string</summary>
 
-### 接口类型
+- string
+
+</details>
+
+<details>
+<summary>接口类型 inteface</summary>
 
 - inteface
 
-### 函数类型
+</details>
+
+<details>
+<summary>函数类型 func</summary>
 
 - func
 
-### 引用类型
+</details>
 
-#### 切片
+<details>
+<summary>引用类型 func</summary>
+
+
+**切片**
 
 > 是一种可以动态数组，可以按我们的希望增长和收缩。
 
 - slice
 
-#### Map
+**Map**
 
 > 是一种无序的键值对的集合。是一种集合，所以我们可以像迭代数组和 slice 那样迭代它。
 
@@ -313,11 +357,14 @@ func removeColor(colors map[string]string, key string) {
 ```
 
 
-#### 通道
+**通道**
 
 - chan
 
-### 类型别名
+</details>
+
+<details>
+<summary>类型别名</summary>
 
 ```go
 type (
@@ -329,7 +376,12 @@ var b 文本
 b = "别名类型，可以是中文！"
 ```
 
-## 常量
+</details>
+
+## 常量变量
+
+<details>
+<summary>常量</summary>
 
 ```go
 const (
@@ -338,7 +390,10 @@ const (
 )
 ```
 
-## 变量 
+</details>
+
+<details>
+<summary>变量</summary>
 
 - 全局变量名 以大写开头
 - 全局变量不可以省略 var ，可以使用并行的方式
@@ -369,7 +424,10 @@ var a, _, c, d int = 1, 2, 3, 4
 // 忽略 _ 返回值忽略
 ```
 
-## 变量的类型转换
+</details>
+
+<details>
+<summary>变量</summary>
 
 ```go
 // 只能类型显式转换
@@ -378,3 +436,6 @@ b := int(a)
 
 // 不兼容的类型不能转换类型
 ```
+
+</details>
+
