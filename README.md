@@ -17,6 +17,7 @@ Go语言快速入门
 
 - [安装](#安装)
   - [CentOS7中安装](#centos7中安装)
+- [运行](#运行)
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
@@ -81,9 +82,43 @@ $GOROOT/src/all.bash # 测试用例正确
 
 </details>
 
+## 运行
+
+<details>
+<summary>通过go命令运行</summary>
+
+我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为`print.go`文件
+
+```go
+package main
+import "fmt" 
+func main() {
+   fmt.Println("Hello, World!")
+}
+```
+
+命令运行`go`程序，在`print.go`目录下运行下面命令，可以输出`hello world!`。
+
+```bash
+go run print.go
+```
+
+</details>
+
+<details>
+<summary>通过go命令编译运行</summary>
+
+GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在`print.go`目录下运行下面命令，即可把go程序编译成二进制文件
+
+```bash
+go build print.go
+```
+
+上面命令文件可以编译成一个`print`可执行文件，然后直接在当前目录下 `./print` 运行，可以输出`hello world!`。
+
+</details>
 
 ## 编程基础
-
 
 <details>
 <summary>内置关键字</summary>
