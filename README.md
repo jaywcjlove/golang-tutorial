@@ -79,7 +79,7 @@ $GOROOT/src/all.bash # 测试用例正确
 <details>
 <summary>Mac中通过brew命令安装</summary>
 
-使用[home brew](http://brew.sh/)安装Go
+使用[home brew](http://brew.sh/)安装方便快捷安装Go
 
 ```bash
 brew update && brew upgrade # 更新 Homebrew 的信息
@@ -232,6 +232,26 @@ continue   for           import    retrun       var
 </details>
 
 <details>
+<summary>36个预定义标识符</summary>
+
+```go
+append	bool	  byte	  cap	    close	 complex complex64 complex128	uint16
+copy	  false	  float32	float64	imag	 int	   int8	     int16      uint32
+int32	  int64	  iota	  len	    make	 new	   nil	     panic      uint64
+print	  println	real	  recover	string true	   uint	     uint8      uintptr
+```
+
+</details>
+
+<details>
+<summary>行分隔符</summary>
+
+- 在 Go 程序中，一行代表一个语句结束，不需要分隔符。
+- 打算将多个语句写在同一行，它们则必须使用 `;` 人为区分，并不鼓励这种做法。
+
+</details>
+
+<details>
 <summary>注释方法</summary>
 
 ```go
@@ -240,6 +260,29 @@ continue   for           import    retrun       var
 /*
   多行注释
 */
+```
+
+</details>
+
+<details>
+<summary>标识符</summary>
+
+- 标识符用来命名变量、类型等程序实体。
+- 第一个字符必须是字母或下划线而不能是数字
+
+有效标识符
+
+```
+mahesh   kumar   abc   move_name   a_123
+myname50   _temp   j   a23b9   retVal
+```
+
+无效标识符
+
+```bash
+1ab  #（以数字开头）
+case #（Go 语言的关键字）
+a+b  #（运算符是不允许的）
 ```
 
 </details>
