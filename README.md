@@ -421,7 +421,47 @@ array := [5]int{12, 123, 1234, 12345, 123456}
 <details>
 <summary>结构类型 struct</summary>
 
-- struct
+```go
+type identifier struct {
+    field1 type1
+    field2 type2
+    ...
+}
+```
+
+简单的结构体：`type T struct {a, b int}`，结构体里的字段都有 名字，像 `field1`、`field2` 等，如果字段在代码中从来也不会被用到，那么可以命名它为 `_`。
+
+上面简单的结构体定义，下面调用方法：
+
+```go
+var s T
+s.a = 5
+s.b = 8
+```
+
+数组可以看作是一种结构体类型，不过它使用下标而不是具名的字段。
+
+```go
+var t *T
+t = new(T)
+```
+
+上面简单的管用语句方法`t := new(T)`，变量 `t` 是一个指向 `T` 的指针，此时结构体字段的值是它们所属类型的零值。
+
+声明 `var t T` 也会给 `t` 分配内存，并零值化内存，但是这个时候 `t` 是类型`T`。在这两种方式中，`t` 通常被称做类型 `T` 的一个实例（instance）或对象（object）。
+
+一个非常简单的例子[structs_fields.go](./test/structs_fields.go)运行例子查看结果：
+
+```bash
+→ go run test/structs_fields.go
+
+The int is: 10
+The float is: 15.500000
+The string is: Chris
+&{10 15.5 Chris}
+```
+
+**使用 new**
 
 </details>
 
