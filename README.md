@@ -388,6 +388,14 @@ var b bool = true
 <details>
 <summary>字节型 byte</summary>
 
+```go
+// 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
+b := []byte("Golang")
+c := []byte("go")
+d := []byte("Go")
+println(b,c,d)
+```
+
 - byte(uint8别名)
 
 </details>
