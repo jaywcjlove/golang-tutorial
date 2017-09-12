@@ -34,9 +34,8 @@ Go语言快速入门
 <details>
 <summary>CentOS7中通过yum安装</summary>
 
-CentOS7 可以只用使用yum安装
-
 ```bash
+# CentOS7 可以只用使用yum安装
 yum install golang  
 ```
 
@@ -45,16 +44,11 @@ yum install golang
 <details>
 <summary>CentOS7中通过源码安装</summary>
 
-源码下载
-
 ```bash
+# 源码下载
 wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-```
-
-新建GOPATH目录
-
-```bash
+# 新建GOPATH目录
 mkdir -p $HOME/gopath
 ```
 
@@ -85,7 +79,7 @@ $GOROOT/src/all.bash # 测试用例正确
 <details>
 <summary>Mac中通过brew命令安装</summary>
 
-利器[home brew](http://brew.sh/)安装Go
+使用[home brew](http://brew.sh/)安装Go
 
 ```bash
 brew update && brew upgrade # 更新 Homebrew 的信息
@@ -146,41 +140,40 @@ Go is a tool for managing Go source code.
 Go是用于管理Go源代码的工具。
 
 Usage用法:
-
 	go command [arguments]
 
 The commands are:
 
-	build       命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
-	clean       删除掉执行其它命令时产生的一些文件和目录。
-	doc         命令可以打印附于Go语言程序实体上的文档。
-	env         用于打印Go语言的环境信息。
-	bug         启动错误报告。
-	fix         把指定代码包的所有Go语言源码文件中的旧版本代码修正为新版本的代码。
-	fmt         在包源上运行gofmt。
-	generate    通过处理源生成Go文件。
-	get         下载或更新安装指定的代码包及其依赖包，并对它们进行编译和安装。
-	install     用于编译并安装指定的代码包及它们的依赖包。
-	list        列出指定的代码包的信息。
-	run         命令可以编译并运行命令源码文件。
-	test        对Go语言编写的程序进行测试。
-	tool        运行指定的go工具
-	version     打印Go的版本信息
-	vet         用于检查Go语言源码中静态错误的简单工具。
+  build       命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
+  clean       删除掉执行其它命令时产生的一些文件和目录。
+  doc         命令可以打印附于Go语言程序实体上的文档。
+  env         用于打印Go语言的环境信息。
+  bug         启动错误报告。
+  fix         把指定代码包的所有Go语言源码文件中的旧版本代码修正为新版本的代码。
+  fmt         在包源上运行gofmt。
+  generate    通过处理源生成Go文件。
+  get         下载或更新安装指定的代码包及其依赖包，并对它们进行编译和安装。
+  install     用于编译并安装指定的代码包及它们的依赖包。
+  list        列出指定的代码包的信息。
+  run         命令可以编译并运行命令源码文件。
+  test        对Go语言编写的程序进行测试。
+  tool        运行指定的go工具
+  version     打印Go的版本信息
+  vet         用于检查Go语言源码中静态错误的简单工具。
 
 Use "go help [command]" for more information about a command.
 
 Additional help topics:
 
-	c           calling between Go and C
-	buildmode   description of build modes
-	filetype    file types
-	gopath      GOPATH environment variable
-	environment environment variables
-	importpath  import path syntax
-	packages    description of package lists
-	testflag    description of testing flags
-	testfunc    description of testing functions
+  c           calling between Go and C
+  buildmode   description of build modes
+  filetype    file types
+  gopath      GOPATH environment variable
+  environment environment variables
+  importpath  import path syntax
+  packages    description of package lists
+  testflag    description of testing flags
+  testfunc    description of testing functions
 
 Use "go help [topic]" for more information about that topic.
 ```
