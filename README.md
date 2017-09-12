@@ -4,7 +4,7 @@ Go语言快速入门
 安装之前需要了解及新建几个必要的文件目录：
 
 - GOROOT 目录，该目录为解压压缩包所存放的目录。
->（建议 linux 环境解压到 /usr/local 目录，windows 环境解压到 C:\ProgramFiles 目录）
+    >（建议 linux 环境解压到 /usr/local 目录，windows 环境解压到 C:\ProgramFiles 目录）
 - 新建 GOPATH 目录，即为我们的“工作目录”，该目录可以有多个，建议只设置一个。
 - GOPATH 目录下新建 `src` 目录，该目录用于存放第三方库源码，以及存放我们的项目的源码。
 - GOPATH 目录下新建 `bin` 目录，该目录用于存放项目中所生成的可执行文件。
