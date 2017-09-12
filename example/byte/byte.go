@@ -39,7 +39,7 @@ func main() {
 	fmt.Println(string(bytes.Replace(s3, old, new, n)))
 	fmt.Println(string(bytes.Replace(s3, old, new, -1)))
 
-	
+
 	// 将字节切片 转化为对应的 UTF-8编码的字节序列，并且返回对应的 Unicode 切片。
 	s4 := []byte("中华人民共和国")
 	r1 := bytes.Runes(s4)
