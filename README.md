@@ -46,7 +46,8 @@ yum install golang
 
 ```bash
 # 源码下载
-wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+# 官网源码 https://golang.org/dl/ 需要翻墙
+wget https://storage.googleapis.com/golang/go1.9.darwin-amd64.pkg
 tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
 # 新建GOPATH目录
 mkdir -p $HOME/gopath
@@ -195,7 +196,7 @@ func main() {
 }
 ```
 
-命令运行`go`程序，在[hello.go](./example/hello/hello.go)目录下运行下面命令，可以输出`hello world!`。
+命令运行`go`程序，在[hello.go](./example/hello/hello.go)这个当前目录下运行下面命令，可以输出`hello world!`。
 
 ```bash
 go run hello.go
@@ -232,7 +233,7 @@ continue   for           import    retrun       var
 </details>
 
 <details>
-<summary>36个预定义标识符</summary>
+<summary>预定义标识符</summary>
 
 ```go
 append	bool	  byte	  cap	    close	 complex complex64 complex128	uint16
@@ -356,6 +357,10 @@ Go语言中约定使用 **大小写** 来决定常量、变量、类型、接口
 
 <details>
 <summary>布尔型</summary>
+
+```go
+var b bool = true
+```
 
 - 长度：1字节
 - 取值范围：true/false
@@ -738,9 +743,29 @@ var a, _, c, d int = 1, 2, 3, 4
 ```go
 // 只能类型显式转换
 var a float32 = 1.1
+// 省略var, 简短形式，使用 := 赋值操作符
 b := int(a)
-
 // 不兼容的类型不能转换类型
+```
+
+</details>
+
+<details>
+<summary>多变量声明</summary>
+
+```go
+var x, y int
+// 这种因式分解关键字的写法一般用于声明全局变量
+var (
+  a int
+  b bool
+)
+
+var c, d int = 1, 2
+var e, f = 123, "hello"
+
+//这种不带声明格式的只能在函数体中出现
+//g, h := 123, "hello"
 ```
 
 </details>
