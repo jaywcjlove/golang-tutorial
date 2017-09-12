@@ -192,7 +192,7 @@ Use "go help [topic]" for more information about that topic.
 <details>
 <summary>通过go命令运行</summary>
 
-我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go]()文件
+我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go](./test/hello.go)文件
 
 ```go
 package main
@@ -202,10 +202,10 @@ func main() {
 }
 ```
 
-命令运行`go`程序，在`print.go`目录下运行下面命令，可以输出`hello world!`。
+命令运行`go`程序，在[hello.go](./test/hello.go)目录下运行下面命令，可以输出`hello world!`。
 
 ```bash
-go run print.go
+go run hello.go
 ```
 
 </details>
@@ -213,13 +213,13 @@ go run print.go
 <details>
 <summary>通过go命令编译运行</summary>
 
-GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在`print.go`目录下运行下面命令，即可把go程序编译成二进制文件
+GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在[hello.go](./test/hello.go)目录下运行下面命令，即可把go程序编译成二进制文件
 
 ```bash
-go build print.go
+go build hello.go
 ```
 
-上面命令文件可以编译成一个`print`可执行文件，然后直接在当前目录下 `./print` 运行，可以输出`hello world!`。
+上面命令文件可以编译成一个`hello`可执行文件，然后直接在当前目录下 `./hello` 运行，可以输出`hello world!`。
 
 </details>
 
