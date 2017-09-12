@@ -192,7 +192,7 @@ Use "go help [topic]" for more information about that topic.
 <details>
 <summary>通过go命令运行</summary>
 
-我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go](./test/hello.go)文件
+我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go](./example/hello/hello.go)文件
 
 ```go
 package main
@@ -202,7 +202,7 @@ func main() {
 }
 ```
 
-命令运行`go`程序，在[hello.go](./test/hello.go)目录下运行下面命令，可以输出`hello world!`。
+命令运行`go`程序，在[hello.go](./example/hello/hello.go)目录下运行下面命令，可以输出`hello world!`。
 
 ```bash
 go run hello.go
@@ -213,7 +213,7 @@ go run hello.go
 <details>
 <summary>通过go命令编译运行</summary>
 
-GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在[hello.go](./test/hello.go)目录下运行下面命令，即可把go程序编译成二进制文件
+GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在[hello.go](./example/hello/hello.go)目录下运行下面命令，即可把go程序编译成二进制文件
 
 ```bash
 go build hello.go
@@ -454,7 +454,7 @@ t = new(T)
 
 声明 `var t T` 也会给 `t` 分配内存，并零值化内存，但是这个时候 `t` 是类型`T`。在这两种方式中，`t` 通常被称做类型 `T` 的一个实例（instance）或对象（object）。
 
-一个非常简单的例子[structs_fields.go](./test/structs_fields.go)运行例子查看结果：
+一个非常简单的例子[structs_fields.go](./example/structs/structs_fields.go)运行例子查看结果：
 
 ```bash
 → go run test/structs_fields.go
