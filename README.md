@@ -18,11 +18,8 @@ Go语言快速入门
 
 <!-- TOC -->
 
-- [安装](#安装)
-  - [CentOS7中安装](#centos7中安装)
-  - [Mac中安装](#mac中安装)
-  - [标准命令详解](#标准命令详解)
-- [运行go](#运行go)
+- [安装Go](#安装go)
+- [运行Go](#运行go)
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
@@ -32,12 +29,10 @@ Go语言快速入门
 
 </details>
 
-## 安装
-
-### CentOS7中安装
+## 安装Go
 
 <details>
-<summary>yum安装</summary>
+<summary>CentOS7中通过yum安装</summary>
 
 CentOS7 可以只用使用yum安装
 
@@ -48,7 +43,7 @@ yum install golang
 </details>
 
 <details>
-<summary>源码安装</summary>
+<summary>CentOS7中通过源码安装</summary>
 
 源码下载
 
@@ -87,10 +82,8 @@ $GOROOT/src/all.bash # 测试用例正确
 
 </details>
 
-### Mac中安装
-
 <details>
-<summary>通过brew命令安装</summary>
+<summary>Mac中通过brew命令安装</summary>
 
 利器[home brew](http://brew.sh/)安装Go
 
@@ -144,12 +137,8 @@ export PATH=$PATH:$GOPATH/bin
 
 </details>
 
-### 标准命令详解
-
 <details>
 <summary>标准命令详解</summary>
-
-我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go]()文件
 
 ```bash
 → go --help
@@ -198,7 +187,7 @@ Use "go help [topic]" for more information about that topic.
 
 </details>
 
-## 运行go
+## 运行Go
 
 <details>
 <summary>通过go命令运行</summary>
