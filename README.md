@@ -17,6 +17,7 @@ Go语言快速入门
 
 - [安装](#安装)
   - [CentOS7中安装](#centos7中安装)
+  - [Mac中安装](#mac中安装)
 - [运行](#运行)
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
@@ -78,6 +79,63 @@ source /etc/profile
 ```bash
 cat $GOROOT/VERSION  # 查看版本
 $GOROOT/src/all.bash # 测试用例正确
+```
+
+</details>
+
+### Mac中安装
+
+<details>
+<summary>通过brew命令安装</summary>
+
+利器[home brew](http://brew.sh/)安装Go
+
+```bash
+brew update && brew upgrade # 更新 Homebrew 的信息
+brew install git            # 安装 git
+brew install go             # 安装 go
+```
+
+通过`go env`查看go的详细信息
+
+```bash
+→ go env
+
+GOARCH="amd64"
+GOBIN=""
+GOEXE=""
+GOHOSTARCH="amd64"
+GOHOSTOS="darwin"
+GOOS="darwin"
+GOPATH="/Users/kenny/go"
+GORACE=""
+GOROOT="/usr/local/Cellar/go/1.9/libexec"
+GOTOOLDIR="/usr/local/Cellar/go/1.9/libexec/pkg/tool/darwin_amd64"
+GCCGO="gccgo"
+CC="clang"
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/go-build377856897=/tmp/go-build -gno-record-gcc-switches -fno-common"
+CXX="clang++"
+CGO_ENABLED="1"
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+```
+
+如果需要修改默认的环境变量配置修改 `vim ~/.bash_profile` 或者 `vim ~/.zshrc`
+
+```bash
+#GOROOT
+export GOROOT=/usr/local/Cellar/go/1.9/libexec
+#GOPATH root bin
+export GOBIN=$GOROOT/bin
+export PATH=$PATH:$GOBIN
+#GOPATH
+export GOPATH=$HOME/go
+#GOPATH bin
+export PATH=$PATH:$GOPATH/bin
 ```
 
 </details>
