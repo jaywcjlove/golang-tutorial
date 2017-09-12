@@ -9,6 +9,7 @@ Go语言快速入门
 - 在 GOPATH 目录下新建 bin 目录，该目录用于存放项目中所生成的可执行文件。
 - 在 GOPATH 目录下新建 pkg 目录，该目录用于存放编译生成的库文件。
 
+---
 
 <details>
 <summary>点击展开目录菜单</summary>
