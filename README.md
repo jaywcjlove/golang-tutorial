@@ -443,6 +443,8 @@ println(b,c,d)
 - `Runes()` 将 S 转化为对应的 UTF-8 编码的字节序列，并且返回对应的Unicode 切片
 - `Join()` 函数，将子字节切片连接到一起。
 
+可以参考下面列子来理解上面7个方法，例子 [byte.go](./example/byte/byte.go)
+
 ```go
 package main
 import (
