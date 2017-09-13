@@ -566,14 +566,16 @@ func main() {
   fmt.Println(x)
   fmt.Printf("x is of type %T\n", x)
 
-  var a float64 = 20.0
+	a := float64(20.0)
   b := 42 
   fmt.Println(a)
-  fmt.Println(y)
+  fmt.Println(b)
   fmt.Printf("a is of type %T\n", a)
   fmt.Printf("b is of type %T\n", b)
 }
 ```
+
+实例：[float.go](./example/float/float.go)
 
 - float32/float64
 - 长度：4/8字节
