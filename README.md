@@ -1,6 +1,8 @@
 Go语言快速入门
 ===
 
+通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。下面所有例子均来源于网络，看文需谨慎后果自负。
+
 安装之前需要了解及新建几个必要的文件目录：
 
 - GOROOT 目录，该目录为解压压缩包所存放的目录。
@@ -81,13 +83,31 @@ $GOROOT/src/all.bash # 测试用例正确
 <details>
 <summary>Mac中通过brew命令安装</summary>
 
-使用[home brew](http://brew.sh/)安装方便快捷安装Go
+使用[home brew](http://brew.sh/)安装方便快捷安装Go，如果你想要在你的 Mac 系统上安装 Go，则必须使用 `Intel 64` 位处理器，Go 不支持 `PowerPC` 处理器。
 
 ```bash
 brew update && brew upgrade # 更新 Homebrew 的信息
 brew install git            # 安装 git
 brew install go             # 安装 go
 ```
+
+</details>
+
+
+<details>
+<summary>Mac中通过源码安装</summary>
+
+通过源代码编译安装的过程与环境变量的配置与在 Linux 系统非常相似，因此不再赘述。
+
+**注意事项：**
+
+在 Mac 系统下使用到的 C 工具链是 Xcode 的一部分，因此你需要通过安装 Xcode 来完成这些工具的安装。你并不需要安装完整的 Xcode，而只需要安装它的命令行工具部分。
+
+</details>
+
+
+<details>
+<summary>环境变量配置</summary>
 
 通过`go env`查看go的详细信息
 
@@ -132,6 +152,7 @@ export PATH=$PATH:$GOPATH/bin
 ```
 
 </details>
+
 
 <details>
 <summary>标准命令详解</summary>
