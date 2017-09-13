@@ -749,6 +749,14 @@ ch :=str[0]    //获取第一个字符
 len :=len(str) //字符串的长度,len是内置函数 ,len=5
 ```
 
+len函数是Go中内置函数，不引入strings包即可使用。len(string)返回的是字符串的字节数。len函数所支持的入参类型如下：
+
+- len(Array) 数组的元素个数
+- len(*Array) 数组指针中的元素个数,如果入参为nil则返回0
+- len(Slice) 数组切片中元素个数,如果入参为nil则返回0
+- len(map) 字典中元素个数,如果入参为nil则返回0
+- len(Channel) Channel buffer队列中元素个数
+
 </details>
 
 <details>
