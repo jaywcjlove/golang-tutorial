@@ -56,28 +56,6 @@ tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
 mkdir -p $HOME/gopath
 ```
 
-编辑 `vim /etc/profile` 添加环境变量。
-
-```bash
-export GOROOT=/usr/local/go
-export GOBIN=$GOROOT/bin
-export PATH=$PATH:$GOBIN
-export GOPATH=$HOME/wwwroot/gofile
-```
-
-使其立即生效
-
-```bash
-source /etc/profile
-```
-
-其它命令
-
-```bash
-cat $GOROOT/VERSION  # 查看版本
-$GOROOT/src/all.bash # 测试用例正确
-```
-
 </details>
 
 <details>
@@ -141,6 +119,9 @@ PKG_CONFIG="pkg-config"
 
 ```bash
 #GOROOT
+# CentOS 中如下设置 GOROOT，看你安装的路径
+# export GOROOT=/usr/local/go
+# Mac OS 中通过命令行工具brew安装如下配置 GOROOT
 export GOROOT=/usr/local/Cellar/go/1.9/libexec
 #GOPATH root bin
 export GOBIN=$GOROOT/bin
@@ -149,6 +130,12 @@ export PATH=$PATH:$GOBIN
 export GOPATH=$HOME/go
 #GOPATH bin
 export PATH=$PATH:$GOPATH/bin
+```
+
+使其立即生效
+
+```bash
+source /etc/profile
 ```
 
 </details>
@@ -199,6 +186,13 @@ Additional help topics:
   testfunc    description of testing functions
 
 Use "go help [topic]" for more information about that topic.
+```
+
+其它命令
+
+```bash
+cat $GOROOT/VERSION  # 查看版本
+$GOROOT/src/all.bash # 测试用例正确
 ```
 
 </details>
