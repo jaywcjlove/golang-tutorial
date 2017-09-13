@@ -742,7 +742,12 @@ The string is: Chris
 <details>
 <summary>字符串类型 string</summary>
 
-- string
+```go
+var str string //声明一个字符串
+str = "Go lang"  //赋值
+ch :=str[0]    //获取第一个字符
+len :=len(str) //字符串的长度,len是内置函数 ,len=5
+```
 
 </details>
 
