@@ -22,6 +22,7 @@ Go语言快速入门
 
 - [安装Go](#安装go)
 - [运行Go](#运行go)
+- [格式化输入输出](#格式化输入输出)
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
@@ -233,6 +234,174 @@ go build hello.go
 
 </details>
 
+## 格式化输入输出
+
+> `%[标记][宽度][.精度][arg索引]动词`
+> `Print(arg列表)`、`Println(arg列表)`、`Printf(格式字符串, arg列表)`
+
+<details>
+<summary>标记</summary>
+
+```
++ 总打印数值的正负号；对于%q（%+q）保证只输出ASCII编码的字符。
+- 在右侧而非左侧填充空格（左对齐该区域）
+# 备用格式：为八进制添加前导 0（%#o），为十六进制添加前导 0x（%#x）或
+  0X（%#X），为 %p（%#p）去掉前导 0x；对于 %q，若 strconv.CanBackquote
+  返回 true，就会打印原始（即反引号围绕的）字符串；如果是可打印字符，
+  %U（%#U）会写出该字符的Unicode编码形式（如字符 x 会被打印成 U+0078 'x'）。
+' ' （空格）为数值中省略的正负号留出空白（% d）；
+  以十六进制（% x, % X）打印字符串或切片时，在字节之间用空格隔开
+0	填充前导的0而非空格；对于数字，这会将填充移到正负号之后
+```
+
+- 其中 `0` 和 `-` 不能同时使用，优先使用 `-` 而忽略 `0`。  
+- 标记有事会被占位符忽略，所以不要指望它们。例如十进制没有备用格式，因此 `%#d` 与 `%d` 的行为相同。
+
+</details>
+
+<details>
+<summary>宽度和精度</summary>
+
+`[宽度][.精度]`都可以写成以下三种形式：`数值`，`*`，`arg索引*`  
+
+- `数值` 表示使用指定的数值作为宽度值或精度值
+- `*` 表示使用当前正在处理的 arg 的值作为宽度值或精度值，如果这样的话，要格式化的 arg 将自动跳转到下一个。
+- `arg索引*` 表示使用指定 arg 的值作为宽度值或精度值，如果这样的话，要格式化的 arg 将自动跳转到指定 arg 的下一个。
+
+注意事项：  
+
+- 宽度值：用于设置最小宽度。
+- 精度值：对于浮点型，用于控制小数位数，对于字符串或字节数组，用于控制字符数量（不是字节数量）。
+- 对于浮点型而言，动词 g/G 的精度值比较特殊，在适当的情况下，g/G 会设置总有效数字，而不是小数位数。
+
+</details>
+
+<details>
+<summary>arg 索引</summary>
+
+由中括号和 arg 序号组成（就像这个实例`"abc%+ #8.3[3]vdef"`中的[3])，用于指定当前要处理的 arg 的序号，序号从 1 开始：`'[' + arg序号 + ']'`
+
+</details>
+
+<details>
+<summary>动词/通用动词</summary>
+
+- `v`：默认格式，不同类型的默认格式如下：
+    > 布尔型：`t`
+    > 整　型：`d`
+    > 浮点型：`g`
+    > 复数型：`g`
+    > 字符串：`s`
+    > 通　道：`p`
+    > 指　针：`p`
+
+- `#v`：默认格式，以符合 Go 语法的方式输出。特殊类型的 Go 语法格式如下：
+    > 无符号整型：x
+- `T`：输出 arg 的类型而不是值（使用 Go 语法格式）。
+
+注意事项：`动词`不能省略，不同的数据类型支持的动词不一样。
+
+</details>
+
+<details>
+<summary>布尔型</summary>
+
+-`t` ：输出 true 或 false 字符串。
+
+</details>
+
+<details>
+<summary>整型</summary>
+
+- `b/o/d`：输出 2/8/10 进制格式
+- `x/X  `：输出 16 进制格式（小写/大写）
+- `c    `：输出数值所表示的 Unicode 字符
+- `q    `：输出数值所表示的 Unicode 字符（带单引号）。对于无法显示的字符，将输出其转义字符。
+- `U    `：输出 Unicode 码点（例如 U+1234，等同于字符串 "U+%04X" 的显示结果）
+
+对于 o/x/X：
+- 如果使用 "#" 标记，则会添加前导 0 或 0x。
+
+对于 U：
+- 如果使用 "#" 标记，则会在 Unicode 码点后面添加相应的 '字符'（前提是该字符必须可显示）
+
+</details>
+
+<details>
+<summary>浮点型和复数型</summary>
+
+- `b`：科学计数法（以 2  为底）
+- `e/E`：科学计数法（以 10 为底，小写 e/大写 E）
+- `f/F`：普通小数格式（两者无区别）
+- `g/G`：大指数（指数 >= 6）使用 %e/%E，其它情况使用 %f/%F
+
+</details>
+
+<details>
+<summary>字符串或字节切片</summary>
+
+- `s` ：普通字符串
+- `q` ：双引号引起来的 Go 语法字符串
+- `x/X`：十六进制编码（小写/大写，以字节为元素进行编码，而不是字符）
+
+对于 q：
+- 如果使用了 `+` 标记，则将所有非 ASCII 字符都进行转义处理。
+- 如果使用了 `#` 标记，则输出反引号引起来的字符串（前提是
+- 字符串中不包含任何制表符以外的控制字符，否则忽略 # 标记）
+
+对于 x/X：
+- 如果使用了 " " 标记，则在每个元素之间添加空格。
+- 如果使用了 "#" 标记，则在十六进制格式之前添加 0x 前缀。
+
+</details>
+
+<details>
+<summary>指针类型</summary>
+
+- `p` ：带 0x 前缀的十六进制地址值。
+- `#p`：不带 0x 前缀的十六进制地址值。
+
+</details>
+
+<details>
+<summary>符合类型</summary>
+
+复合类型将使用不同的格式输出，格式如下：
+
+```
+结　构　体：{字段1 字段2 ...}
+数组或切片：[元素0 元素1 ...]
+映　　　射：map[键1:值1 键2:值2 ...]
+```
+
+指向符合元素的指针：`&{}`, `&[]`, `&map[]`
+复合类型本身没有动词，动词将应用到复合类型的元素上。
+结构体可以使用 "+v" 同时输出字段名。
+
+</details>
+
+<details>
+<summary>格式化输入</summary>
+
+```go
+// 格式化输入：从输入端读取字符串（以空白分隔的值的序列），
+// 并解析为具体的值存入相应的 arg 中，arg 必须是变量地址。
+// 字符串中的连续空白视为单个空白，换行符根据不同情况处理。
+// \r\n 被当做 \n 处理。
+
+// 以动词 v 解析字符串，换行视为空白
+Scan(arg列表)
+// 以动词 v 解析字符串，换行结束解析
+Scanln(arg列表)
+// 根据格式字符串中指定的格式解析字符串
+// 格式字符串中的换行符必须和输入端的换行符相匹配。
+Scanf(格式字符串, arg列表)
+
+// Scan 类函数会返回已处理的 arg 数量和遇到的错误信息。
+```
+
+</details>
+
 ## 编程基础
 
 <details>
@@ -255,7 +424,7 @@ continue   for           import    retrun       var
 append  bool    byte    cap     close  complex complex64 complex128 uint16
 copy    false   float32 float64 imag   int     int8      int16      uint32
 int32   int64   iota    len     make   new     nil       panic      uint64
-print   println real    recover string true	   uint	     uint8      uintptr
+print   println real    recover string true    uint      uint8      uintptr
 ```
 
 </details>
@@ -281,8 +450,8 @@ print   println real    recover string true	   uint	     uint8      uintptr
 
 </details>
 
-<details>
-<summary>标识符</summary>
+<detailsd>
+<summardy>标识符</summary>
 
 - 标识符用来命名变量、类型等程序实体。
 - 第一个字符必须是字母或下划线而不能是数字
@@ -305,7 +474,7 @@ a+b  #（运算符是不允许的）
 </details>
 
 <details>
-<summary>包导入</summary>
+<summary>包导入 import</summary>
 
 ```go
 import "fmt"
@@ -375,7 +544,11 @@ Go语言中约定使用 **大小写** 来决定常量、变量、类型、接口
 <summary>布尔型</summary>
 
 ```go
-var b bool = true
+var b bool
+b  = true
+fmt.Printf("b is of type %t\n", b)
+e := bool(true)
+fmt.Printf("e is of type %t\n", e)
 ```
 
 - 长度：1字节
