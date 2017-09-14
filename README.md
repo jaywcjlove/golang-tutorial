@@ -451,7 +451,7 @@ print   println real    recover string true    uint      uint8      uintptr
 </details>
 
 <details>
-<summardy>标识符</summary>
+<summary>标识符</summary>
 
 - 标识符用来命名变量、类型等程序实体。
 - 第一个字符必须是字母或下划线而不能是数字
