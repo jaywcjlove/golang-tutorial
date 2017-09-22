@@ -237,7 +237,7 @@ go build hello.go
 <details>
 <summary>在浏览器中运行</summary>
 
-Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览器中打开 https://play.golang.org/ ，输入代码，点击 Run，看看会发生什么？还有个 Share 按钮，点击它会得到一个用于分享的网址，任何人都能代开这个链接，试一试 https://play.golang.org/p/UIOwu0DBQV
+Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览器中打开 https://play.golang.org/ (需要穿越才能打开) ，输入代码，点击 Run，看看会发生什么？还有个 Share 按钮，点击它会得到一个用于分享的网址，任何人都能代开这个链接，试一试 https://play.golang.org/p/UIOwu0DBQV
 
 </details>
 
