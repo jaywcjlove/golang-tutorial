@@ -198,6 +198,49 @@ $GOROOT/src/all.bash # 测试用例正确
 
 </details>
 
+
+<details>
+<summary>依赖管理工具</summary>
+
+目前 Go 语言常用的依赖管理工具，有三个 [godep](https://github.com/tools/godep)、[vendor](https://github.com/kardianos/govendor)和[db](https://github.com/constabulary/gb/)，`vendor` 是go 1.5 官方引入管理包依赖的方式，1.6正式引入。所以这里推荐是用[vendor](https://github.com/kardianos/govendor)来管理你的依赖。
+
+快速开始：
+
+```bash
+# 设置你的项目
+cd "my project in GOPATH"
+govendor init
+
+# 将现有的GOPATH文件添加到vendor。
+govendor add +external
+
+# 查看你的工作。
+govendor list
+
+# 看看什么是使用包
+govendor list -v fmt
+
+# 指定要获取的特定版本或修订版本
+govendor fetch golang.org/x/net/context@a4bbce9fcae005b22ae5443f6af064d80a6f5a55
+govendor fetch golang.org/x/net/context@v1   # Get latest v1.*.* tag or branch.
+govendor fetch golang.org/x/net/context@=v1  # Get the tag or branch named "v1".
+
+# 给予任何先前版本的约束，将包更新为最新
+govendor fetch golang.org/x/net/context
+
+# 仅格式化您的存储库
+govendor fmt +local
+
+# 构建您的存储库中的所有内容
+govendor install +local
+
+# 仅测试您的存储库
+govendor test +local
+```
+
+
+</details>
+
 ## 运行Go
 
 <details>
@@ -244,8 +287,8 @@ Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览�
 
 ## 格式化输入输出
 
-> `%[标记][宽度][.精度][arg索引]动词`
-> `Print(arg列表)`、`Println(arg列表)`、`Printf(格式字符串, arg列表)`
+> `%[标记][宽度][.精度][arg索引]动词`  
+> `Print(arg列表)`、`Println(arg列表)`、`Printf(格式字符串, arg列表)`  
 
 <details>
 <summary>标记</summary>
