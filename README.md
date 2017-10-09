@@ -256,6 +256,9 @@ govendor add +external
 # 查看你的工作。
 govendor list
 
+govendor sync # 从远程仓库拉取依赖
+govendor get  # 像“go get”一样，但将依赖项复制到“vendor”文件夹中。
+
 # 看看什么是使用包
 govendor list -v fmt
 
@@ -277,6 +280,20 @@ govendor install +local
 govendor test +local
 ```
 
+
+</details>
+
+
+<details>
+<summary>运行文档，在线预览文档</summary>
+
+```bash
+# 如果你的 godoc 命令不存在，运行它安装
+$ go get -v  golang.org/x/tools/cmd/godoc
+
+$ godoc -http=:6060
+# 运行上面一条命令，可访问文档http://localhost:6060/
+```
 
 </details>
 
