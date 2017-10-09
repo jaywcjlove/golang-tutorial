@@ -581,7 +581,7 @@ a+b  #（运算符是不允许的）
 </details>
 
 <details>
-<summary>包引用介绍 import</summary>
+<summary>包引用 import</summary>
 
 ```go
 import "fmt"
