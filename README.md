@@ -284,8 +284,10 @@ govendor test +local
 </details>
 
 
+## 运行Go
+
 <details>
-<summary>运行文档，在线预览文档</summary>
+<summary>运行Go文档，在线预览文档</summary>
 
 ```bash
 # 如果你的 godoc 命令不存在，运行它安装
@@ -296,8 +298,6 @@ $ godoc -http=:6060
 ```
 
 </details>
-
-## 运行Go
 
 <details>
 <summary>通过go命令运行</summary>
@@ -598,6 +598,32 @@ import (
   "io"
 )
 ```
+
+**包引用介绍**
+
+```bash
+.
+├── cal
+│   ├── add.go
+│   ├── multi
+│   │   └── multiply.go
+│   └── subtract.go
+└── main.go
+```
+
+注意：[package-demo](example/package-demo) 文件夹复制到 `$GOPATH/src/` 目录下，不然运行报错哦
+
+```bash
+go run $GOPATH/src/package-demo/main.go
+```
+
+main.go中如何调用add.go、subtract.go或者是multiply.go文件中的函数。
+
+> `add.go`和`subtract.go`文件中，包名为cal `package cal`  
+> `multiply.go`在 multi 文件夹下，所以程序的包名为multi `package multi`  
+> 如果 mian 函数要调用`add.go`或者`subtract.go`中的函数，必须要引入包"cal" `import "package-demo/cal"`  
+> 要调用`multiply.go`中的函数，必须要引入包"multi"，`import "package-demo/cal/multi"`  
+> Go中如果函数名的首字母大写，表示该函数是公有的，可以被其他程序调用，如果首字母小写，该函数就是是私有的
 
 </details>
 
