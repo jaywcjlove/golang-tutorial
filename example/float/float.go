@@ -7,7 +7,7 @@ func main() {
   fmt.Println(x)
   fmt.Printf("x is of type %T\n", x)
 
-	a := float64(20.0)
+  a := float64(20.0)
   b := 42 
   fmt.Println(a)
   fmt.Println(b)
