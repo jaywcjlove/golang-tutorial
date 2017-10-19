@@ -27,6 +27,7 @@ Go语言快速入门
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
 - [语言运算符](#语言运算符)
+- [流程控制语句](#流程控制语句)
 - [资源导航](#资源导航)
 
 <!-- /TOC -->
@@ -1664,6 +1665,120 @@ func main() {
 | 3 | <- |
 | 2 | && |
 | 1 | \|\| |
+
+</details>
+
+## 流程控制语句
+
+<details>
+<summary>for 循环语句</summary>
+
+```go
+package main
+import "fmt"
+func main() {
+  sum := 0
+  // 如果条件表达式的值变为 false，那么迭代将终止。
+	for i := 0; i < 10; i++ {
+		sum += i
+	}
+  fmt.Println(sum)
+  
+  // 循环初始化语句和后置语句都是可选的。
+  // for 是 Go 的 “while”
+  // 基于此可以省略分号：C 的 while 在 Go 中叫做 for 。
+  // 如果省略了循环条件，循环就不会结束，因此可以用更简洁地形式表达死循环。
+	sum2 := 1
+	for ; sum2 < 1000; {
+		sum2 += sum2
+	}
+	fmt.Println(sum2)
+}
+```
+基本的 for 循环包含三个由分号分开的组成部分：
+
+1. 初始化语句：在第一次循环执行前被执行
+1. 循环条件表达式：每轮迭代开始前被求值
+1. 后置语句：每轮迭代后被执行
+
+</details>
+
+<details>
+<summary>if 语句</summary>
+
+```go
+package main
+import (
+	"fmt"
+	"math"
+)
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
+}
+func main() {
+	fmt.Println(sqrt(2), sqrt(-4))
+}
+```
+
+就像 for 循环一样，Go 的 if 语句也不要求用 ( ) 将条件括起来，同时， { } 还是必须有的。
+
+**if 的便捷语句**
+
+```go
+package main
+import (
+	"fmt"
+	"math"
+)
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+func main() {
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
+}
+```
+
+</details>
+
+<details>
+<summary>if 和 else 语句</summary>
+
+```go
+package main
+import (
+	"fmt"
+	"math"
+)
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
+	}
+	// 这里开始就不能使用 v 了
+	return lim
+}
+
+func main() {
+  // 两个 pow 调用都在 main 调用 fmt.Println 前执行完毕了。
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
+}
+```
+
+在 if 的便捷语句定义的变量同样可以在任何对应的 else 块中使用。
 
 </details>
 
