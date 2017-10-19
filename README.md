@@ -152,7 +152,7 @@ Go is a tool for managing Go source code.
 Go是用于管理Go源代码的工具。
 
 Usage用法:
-	go command [arguments]
+  go command [arguments]
 
 The commands are:
 
@@ -354,12 +354,12 @@ Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览�
 ```go
 package main
 import (
-	"fmt"
-	"time"
+  "fmt"
+  "time"
 )
 func main() {
-	fmt.Println("Hello World!")
-	fmt.Println("The time is", time.Now())
+  fmt.Println("Hello World!")
+  fmt.Println("The time is", time.Now())
 }
 ```
 
@@ -377,7 +377,7 @@ func main() {
   %U（%#U）会写出该字符的Unicode编码形式（如字符 x 会被打印成 U+0078 'x'）。
 ' ' （空格）为数值中省略的正负号留出空白（% d）；
   以十六进制（% x, % X）打印字符串或切片时，在字节之间用空格隔开
-0	填充前导的0而非空格；对于数字，这会将填充移到正负号之后
+0  填充前导的0而非空格；对于数字，这会将填充移到正负号之后
 ```
 
 - 其中 `0` 和 `-` 不能同时使用，优先使用 `-` 而忽略 `0`。  
@@ -789,8 +789,8 @@ println(b,c,d)
 ```go
 package main
 import (
-	"bytes"
-	"fmt"
+  "bytes"
+  "fmt"
 )
 func main() {
   // 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
@@ -891,7 +891,7 @@ func main() {
   fmt.Println(x)
   fmt.Printf("x is of type %T\n", x)
 
-	a := float64(20.0)
+  a := float64(20.0)
   b := 42 
   fmt.Println(a)
   fmt.Println(b)
@@ -941,15 +941,15 @@ import "fmt"
 func main() {
   // 声明一个长度为5的整数数组
   // 一旦数组被声明了，那么它的数据类型跟长度都不能再被改变。
-	var array1 [5]int
-	
-	fmt.Printf("array1: %d\n\n", array1)
+  var array1 [5]int
+  
+  fmt.Printf("array1: %d\n\n", array1)
 
   // 声明一个长度为5的整数数组
   // 初始化每个元素
   array2 := [5]int{12, 123, 1234, 12345, 123456}
   array2[1] = 5000
-	fmt.Printf("array2: %d\n\n", array2[1])
+  fmt.Printf("array2: %d\n\n", array2[1])
   
   // n 是一个长度为 10 的数组
   var n [10]int 
@@ -1262,12 +1262,12 @@ const (
 )
 
 func main(){
-	const (
-		PI     = 3.14
-		const1 = "1"
-	)
-	const LENGTH int = 10
-	const e, f, g = 1, false, "str" //多重赋值
+  const (
+    PI     = 3.14
+    const1 = "1"
+  )
+  const LENGTH int = 10
+  const e, f, g = 1, false, "str" //多重赋值
   println(a, b, c,PI, LENGTH)
 }
 ```
@@ -1450,11 +1450,11 @@ func main() {
 
 | 运算符 | 描述 | 实例 |
 | ---- | ---- | ---- |
-| ==  | 检查两个值是否相等，如果相等返回 True 否则返回 False。 |	(A == B) 为 False |
-| !=  | 检查两个值是否不相等，如果不相等返回 True 否则返回 False。 |	(A != B) 为 True |
-| > | 检查左边值是否大于右边值，如果是返回 True 否则返回 False。 |	(A > B) 为 False |
-| < | 检查左边值是否小于右边值，如果是返回 True 否则返回 False。 |	(A < B) 为 True |
-| >=  | 检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。 |	(A >= B) 为 False |
+| ==  | 检查两个值是否相等，如果相等返回 True 否则返回 False。 |  (A == B) 为 False |
+| !=  | 检查两个值是否不相等，如果不相等返回 True 否则返回 False。 |  (A != B) 为 True |
+| > | 检查左边值是否大于右边值，如果是返回 True 否则返回 False。 |  (A > B) 为 False |
+| < | 检查左边值是否小于右边值，如果是返回 True 否则返回 False。 |  (A < B) 为 True |
+| >=  | 检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。 |  (A >= B) 为 False |
 | <=  | 检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。 | A <= B) 为 True |
 
 </details>
@@ -1709,17 +1709,17 @@ func main() {
 ```go
 package main
 import (
-	"fmt"
-	"math"
+  "fmt"
+  "math"
 )
 func sqrt(x float64) string {
-	if x < 0 {
-		return sqrt(-x) + "i"
-	}
-	return fmt.Sprint(math.Sqrt(x))
+  if x < 0 {
+    return sqrt(-x) + "i"
+  }
+  return fmt.Sprint(math.Sqrt(x))
 }
 func main() {
-	fmt.Println(sqrt(2), sqrt(-4))
+  fmt.Println(sqrt(2), sqrt(-4))
 }
 ```
 
@@ -1730,21 +1730,21 @@ func main() {
 ```go
 package main
 import (
-	"fmt"
-	"math"
+  "fmt"
+  "math"
 )
 
 func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	}
-	return lim
+  if v := math.Pow(x, n); v < lim {
+    return v
+  }
+  return lim
 }
 func main() {
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
+  fmt.Println(
+    pow(3, 2, 10),
+    pow(3, 3, 20),
+  )
 }
 ```
 
@@ -1756,25 +1756,25 @@ func main() {
 ```go
 package main
 import (
-	"fmt"
-	"math"
+  "fmt"
+  "math"
 )
 func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	} else {
-		fmt.Printf("%g >= %g\n", v, lim)
-	}
-	// 这里开始就不能使用 v 了
-	return lim
+  if v := math.Pow(x, n); v < lim {
+    return v
+  } else {
+    fmt.Printf("%g >= %g\n", v, lim)
+  }
+  // 这里开始就不能使用 v 了
+  return lim
 }
 
 func main() {
   // 两个 pow 调用都在 main 调用 fmt.Println 前执行完毕了。
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
+  fmt.Println(
+    pow(3, 2, 10),
+    pow(3, 3, 20),
+  )
 }
 ```
 
