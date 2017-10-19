@@ -1782,6 +1782,79 @@ func main() {
 
 </details>
 
+<details>
+<summary>switch 语句</summary>
+
+```go
+package main
+import (
+  "fmt"
+  "runtime"
+)
+func main() {
+  fmt.Print("Go runs on ")
+  switch os := runtime.GOOS; os {
+    case "darwin":
+      fmt.Println("OS X.")
+    case "linux":
+      fmt.Println("Linux.")
+    default:
+      // freebsd, openbsd,
+      // plan9, windows...
+      fmt.Printf("%s.", os)
+  }
+}
+```
+
+在 if 的便捷语句定义的变量同样可以在任何对应的 else 块中使用。
+
+**switch 的执行顺序：**条件从上到下的执行，当匹配成功的时候停止。
+
+```go
+package main
+import (
+  "fmt"
+  "time"
+)
+func main() {
+  fmt.Println("When's Saturday?")
+  today := time.Now().Weekday()
+  switch time.Saturday {
+    case today + 0:
+      fmt.Println("Today.")
+    case today + 1:
+      fmt.Println("Tomorrow.")
+    case today + 2:
+      fmt.Println("In two days.")
+    default:
+      fmt.Println("Too far away.")
+  }
+}
+```
+
+**没有条件的 switch 同 switch true 一样。**
+
+```go
+package main
+import (
+  "fmt"
+  "time"
+)
+func main() {
+  t := time.Now()
+  switch {
+    case t.Hour() < 12:
+      fmt.Println("Good morning!")
+    case t.Hour() < 17:
+      fmt.Println("Good afternoon.")
+    default:
+      fmt.Println("Good evening.")
+  }
+}
+```
+
+</details>
+
 ## 资源导航
 
 <details>
