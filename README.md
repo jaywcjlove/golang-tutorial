@@ -343,8 +343,26 @@ Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览�
 
 ## 格式化输入输出
 
+
+<details>
+<summary>输入输出语法方法</summary>
+
 > `%[标记][宽度][.精度][arg索引]动词`  
 > `Print(arg列表)`、`Println(arg列表)`、`Printf(格式字符串, arg列表)`  
+
+```go
+package main
+import (
+	"fmt"
+	"time"
+)
+func main() {
+	fmt.Println("Hello World!")
+	fmt.Println("The time is", time.Now())
+}
+```
+
+</details>
 
 <details>
 <summary>标记</summary>
