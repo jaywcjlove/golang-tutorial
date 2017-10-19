@@ -1492,7 +1492,7 @@ func main() {
 
 | 运算符 | 描述 | 实例 |
 | ---- | ---- | ---- |
-| && | 逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。 |	(A && B) 为 False |
+| && | 逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。 | (A && B) 为 False |
 | \|\| | 逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。|	(A || B) 为 True |
 | ! | 逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。 |	!(A && B) 为 True |
 
@@ -1679,20 +1679,20 @@ import "fmt"
 func main() {
   sum := 0
   // 如果条件表达式的值变为 false，那么迭代将终止。
-	for i := 0; i < 10; i++ {
-		sum += i
-	}
+  for i := 0; i < 10; i++ {
+    sum += i
+  }
   fmt.Println(sum)
   
   // 循环初始化语句和后置语句都是可选的。
   // for 是 Go 的 “while”
   // 基于此可以省略分号：C 的 while 在 Go 中叫做 for 。
   // 如果省略了循环条件，循环就不会结束，因此可以用更简洁地形式表达死循环。
-	sum2 := 1
-	for ; sum2 < 1000; {
-		sum2 += sum2
-	}
-	fmt.Println(sum2)
+  sum2 := 1
+  for ; sum2 < 1000; {
+    sum2 += sum2
+  }
+  fmt.Println(sum2)
 }
 ```
 基本的 for 循环包含三个由分号分开的组成部分：
