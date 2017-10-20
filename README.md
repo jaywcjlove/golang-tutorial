@@ -1904,6 +1904,8 @@ func main() {
 <details>
 <summary>其它文章</summary>
 
+> 文章资源来源与Go社区的[每日新闻](https://gocn.io/topic/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB)
+
 - [使用Go和TensorFlow构建图片识别API](https://outcrawl.com/image-recognition-api-go-tensorflow/)
 - [Golang C++11 中的原子操作对比](http://pp-qq.github.io/2017/10/18/go-c-atomic/)
 - [Docker 镜像优化与最佳实践](http://weibo.com/ttarticle/p/show?id=2309614164586369582704&u=1889019865&m=4164582908028008&cu=2278216581)
