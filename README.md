@@ -1808,7 +1808,7 @@ func main() {
 
 在 if 的便捷语句定义的变量同样可以在任何对应的 else 块中使用。
 
-**switch 的执行顺序：**条件从上到下的执行，当匹配成功的时候停止。
+**switch 的执行顺序：** 条件从上到下的执行，当匹配成功的时候停止。
 
 ```go
 package main
@@ -1852,6 +1852,43 @@ func main() {
   }
 }
 ```
+
+</details>
+
+<details>
+<summary>defer 语句</summary>
+
+```go
+package main
+import "fmt"
+func main() {
+	// 2. 在输出 world
+	defer fmt.Println("world")
+	// 1. 先输出 hello
+	fmt.Println("hello")
+}
+```
+
+> defer 语句会延迟函数的执行直到上层函数返回。
+> 延迟调用的参数会立刻生成，但是在上层函数返回前函数都不会被调用。
+
+**defer 栈**
+
+延迟的函数调用被压入一个栈中。当函数返回时， 会按照后进先出的顺序调用被延迟的函数调用。
+
+```go
+package main
+import "fmt"
+func main() {
+	fmt.Println("counting")
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+	fmt.Println("done")
+}
+```
+
+可以运行demo [defer](example/defer/defer.go) 查看效果。
 
 </details>
 
