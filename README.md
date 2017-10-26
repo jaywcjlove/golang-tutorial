@@ -2021,6 +2021,76 @@ func main() {
 
 </details>
 
+## 结构体
+
+<details>
+<summary>结构体字段</summary>
+
+结构体字段使用点号来访问。
+
+```go
+package main
+import "fmt"
+type Vertex struct {
+  X int
+  Y int
+}
+func main() {
+  v := Vertex{1, 2}
+  v.X = 4
+  fmt.Println(v.X)
+}
+```
+
+</details>
+
+<details>
+<summary>结构体指针</summary>
+
+结构体字段使用点号来访问。
+
+```go
+package main
+import "fmt"
+type Vertex struct {
+  X int
+  Y int
+}
+func main() {
+  v := Vertex{1, 2}
+  p := &v
+  p.X = 1e9
+  fmt.Println(v)
+}
+
+```
+
+</details>
+
+<details>
+<summary>结构体文法</summary>
+
+> 结构体文法表示通过结构体字段的值作为列表来新分配一个结构体。
+> 使用 Name: 语法可以仅列出部分字段。（字段名的顺序无关。）  
+> 特殊的前缀 & 返回一个指向结构体的指针。
+
+```go
+package main
+import "fmt"
+type Vertex struct {
+  X int
+  Y int
+}
+func main() {
+  v := Vertex{1, 2}
+  p := &v
+  p.X = 1e9
+  fmt.Println(v)
+}
+```
+
+</details>
+
 ## 资源导航
 
 <details>
