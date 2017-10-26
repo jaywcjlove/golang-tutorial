@@ -960,8 +960,72 @@ func main() {
 <details>
 <summary>指针整数型 uintptr</summary>
 
+用于指针运算，GC 不把 uintptr 当指针，uintptr 无法持有对象。uintptr 类型的目标会被回收。
+
 - uintptr
 - 保存指正的 32 位或者 64 位整数型
+
+```go
+// 示例：通过指针修改结构体字段
+package main
+import (
+  "fmt"
+  "unsafe"
+)
+
+func main() {
+  s := struct {
+    a byte
+    b byte
+    c byte
+    d int64
+  }{0, 0, 0, 0}
+
+  // 将结构体指针转换为通用指针
+  p := unsafe.Pointer(&s)
+  // 保存结构体的地址备用（偏移量为 0）
+  up0 := uintptr(p)
+  // 将通用指针转换为 byte 型指针
+  pb := (*byte)(p)
+  // 给转换后的指针赋值
+  *pb = 10
+  // 结构体内容跟着改变
+  fmt.Println(s)
+
+  // 偏移到第 2 个字段
+  up := up0 + unsafe.Offsetof(s.b)
+  // 将偏移后的地址转换为通用指针
+  p = unsafe.Pointer(up)
+  // 将通用指针转换为 byte 型指针
+  pb = (*byte)(p)
+  // 给转换后的指针赋值
+  *pb = 20
+  // 结构体内容跟着改变
+  fmt.Println(s)
+
+  // 偏移到第 3 个字段
+  up = up0 + unsafe.Offsetof(s.c)
+  // 将偏移后的地址转换为通用指针
+  p = unsafe.Pointer(up)
+  // 将通用指针转换为 byte 型指针
+  pb = (*byte)(p)
+  // 给转换后的指针赋值
+  *pb = 30
+  // 结构体内容跟着改变
+  fmt.Println(s)
+
+  // 偏移到第 4 个字段
+  up = up0 + unsafe.Offsetof(s.d)
+  // 将偏移后的地址转换为通用指针
+  p = unsafe.Pointer(up)
+  // 将通用指针转换为 int64 型指针
+  pi := (*int64)(p)
+  // 给转换后的指针赋值
+  *pi = 40
+  // 结构体内容跟着改变
+  fmt.Println(s)
+}
+```
 
 </details>
 
@@ -1927,10 +1991,10 @@ func main() {
 package main
 import "fmt"
 func main() {
-	// 2. 在输出 world
-	defer fmt.Println("world")
-	// 1. 先输出 hello
-	fmt.Println("hello")
+  // 2. 在输出 world
+  defer fmt.Println("world")
+  // 1. 先输出 hello
+  fmt.Println("hello")
 }
 ```
 
@@ -1945,11 +2009,11 @@ func main() {
 package main
 import "fmt"
 func main() {
-	fmt.Println("counting")
-	for i := 0; i < 10; i++ {
-		defer fmt.Println(i)
-	}
-	fmt.Println("done")
+  fmt.Println("counting")
+  for i := 0; i < 10; i++ {
+    defer fmt.Println(i)
+  }
+  fmt.Println("done")
 }
 ```
 
