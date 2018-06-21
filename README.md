@@ -531,7 +531,7 @@ func main() {
 </details>
 
 <details>
-<summary>符合类型</summary>
+<summary>复合类型</summary>
 
 复合类型将使用不同的格式输出，格式如下：
 
@@ -541,7 +541,7 @@ func main() {
 映　　　射：map[键1:值1 键2:值2 ...]
 ```
 
-指向符合元素的指针：`&{}`, `&[]`, `&map[]`
+指向复合元素的指针：`&{}`, `&[]`, `&map[]`
 复合类型本身没有动词，动词将应用到复合类型的元素上。
 结构体可以使用 "+v" 同时输出字段名。
 
@@ -579,7 +579,7 @@ break      default       func      interface    select
 case       defer         go        map          struct
 chan       else          goto      package      switch
 const      fallthrough   if        range        type
-continue   for           import    retrun       var
+continue   for           import    return       var
 ```
 
 </details>
@@ -2047,7 +2047,7 @@ func main() {
 <details>
 <summary>结构体指针</summary>
 
-结构体字段使用点号来访问。
+结构体指针使用 & 来访问。
 
 ```go
 package main
