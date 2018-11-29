@@ -2112,9 +2112,10 @@ func main() {
 <details>
 <summary>Web 框架</summary>
 
-- [Macaron](https://go-macaron.com/)：模块化 Web 框架
-- [Beego](http://beego.me/)：重量级 Web 框架
-- [Revel](https://github.com/revel/revel)：较早成熟的重量级 Web 框架
+- [gin](https://github.com/gin-gonic/gin):  HTTP Web框架，它具有类似Martini的API，具有更好的性能
+- [Macaron](https://go-macaron.com/): 模块化 Web 框架
+- [Beego](http://beego.me/): 重量级 Web 框架
+- [Revel](https://github.com/revel/revel): 较早成熟的重量级 Web 框架
 - [Martini](https://github.com/go-martini/martini): 一个强大为了编写模块化 Web 应用而生的 Go 语言框架
 
 </details>
@@ -2122,19 +2123,19 @@ func main() {
 <details>
 <summary>ORM 以及数据库驱动</summary>
 
-- [gorm](https://github.com/jinzhu/gorm)：支持 MySQL、PostgreSQL、SQLite3 以及 SQL Server
-- [xorm](https://github.com/go-xorm/xorm)：支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
-- [mgo](http://labix.org/mgo)：MongoDB 官方推荐驱动
+- [gorm](https://github.com/jinzhu/gorm): 支持 MySQL、PostgreSQL、SQLite3 以及 SQL Server
+- [xorm](https://github.com/go-xorm/xorm): 支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
+- [mgo](http://labix.org/mgo): MongoDB 官方推荐驱动
 
 </details>
 
 <details>
 <summary>辅助站点</summary>
 
-- [Go Walker](https://gowalker.org)：Go 语言在线 API 文档
-- [gobuild.io](http://gobuild.io/)：Go 语言在线二进制编译与下载
-- [Rego](http://regoio.herokuapp.com/)：Go 语言正则在线测试
-- [gopm.io](https://gopm.io)：科学下载第三方包
+- [Go Walker](https://gowalker.org): Go 语言在线 API 文档
+- [gobuild.io](http://gobuild.io/): Go 语言在线二进制编译与下载
+- [Rego](http://regoio.herokuapp.com/): Go 语言正则在线测试
+- [gopm.io](https://gopm.io): 科学下载第三方包
 
 </details>
 
