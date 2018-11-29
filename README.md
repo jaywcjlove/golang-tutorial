@@ -2122,6 +2122,7 @@ func main() {
 <details>
 <summary>ORM 以及数据库驱动</summary>
 
+- [gorm](https://github.com/jinzhu/gorm)：支持 MySQL、PostgreSQL、SQLite3 以及 SQL Server
 - [xorm](https://github.com/go-xorm/xorm)：支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
 - [mgo](http://labix.org/mgo)：MongoDB 官方推荐驱动
 
