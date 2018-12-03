@@ -2112,6 +2112,7 @@ func main() {
 <details>
 <summary>Web 框架</summary>
 
+- [Iris](https://github.com/kataras/iris): 一个快速，简单但功能齐全且非常高效的Web框架。
 - [gin](https://github.com/gin-gonic/gin):  HTTP Web框架，它具有类似Martini的API，具有更好的性能
 - [Macaron](https://go-macaron.com/): 模块化 Web 框架
 - [Beego](http://beego.me/): 重量级 Web 框架
