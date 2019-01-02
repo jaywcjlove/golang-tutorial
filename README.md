@@ -69,6 +69,7 @@ mkdir -p $HOME/gopath
 brew update && brew upgrade # 更新 Homebrew 的信息
 brew install git            # 安装 git
 brew install go             # 安装 go
+brew upgrade go             # 更新 go
 ```
 
 </details>
