@@ -68,6 +68,7 @@ brew update && brew upgrade # 更新 Homebrew 的信息
 brew update go              # 单独更新 golang
 brew install git            # 安装 git
 brew install go             # 安装 go
+brew upgrade go             # 更新 go
 ```
 
 </details>
@@ -541,7 +542,7 @@ func main() {
 </details>
 
 <details>
-<summary>符合类型</summary>
+<summary>复合类型</summary>
 
 复合类型将使用不同的格式输出，格式如下：
 
@@ -551,7 +552,7 @@ func main() {
 映　　　射：map[键1:值1 键2:值2 ...]
 ```
 
-指向符合元素的指针：`&{}`, `&[]`, `&map[]`
+指向复合元素的指针：`&{}`, `&[]`, `&map[]`
 复合类型本身没有动词，动词将应用到复合类型的元素上。
 结构体可以使用 "+v" 同时输出字段名。
 
@@ -589,7 +590,7 @@ break      default       func      interface    select
 case       defer         go        map          struct
 chan       else          goto      package      switch
 const      fallthrough   if        range        type
-continue   for           import    retrun       var
+continue   for           import    return       var
 ```
 
 </details>
@@ -2057,7 +2058,7 @@ func main() {
 <details>
 <summary>结构体指针</summary>
 
-结构体字段使用点号来访问。
+结构体指针使用 & 来访问。
 
 ```go
 package main
@@ -2122,9 +2123,11 @@ func main() {
 <details>
 <summary>Web 框架</summary>
 
-- [Macaron](https://go-macaron.com/)：模块化 Web 框架
-- [Beego](http://beego.me/)：重量级 Web 框架
-- [Revel](https://github.com/revel/revel)：较早成熟的重量级 Web 框架
+- [Iris](https://github.com/kataras/iris): 一个快速，简单但功能齐全且非常高效的Web框架。
+- [gin](https://github.com/gin-gonic/gin):  HTTP Web框架，它具有类似Martini的API，具有更好的性能
+- [Macaron](https://go-macaron.com/): 模块化 Web 框架
+- [Beego](http://beego.me/): 重量级 Web 框架
+- [Revel](https://github.com/revel/revel): 较早成熟的重量级 Web 框架
 - [Martini](https://github.com/go-martini/martini): 一个强大为了编写模块化 Web 应用而生的 Go 语言框架
 
 </details>
@@ -2132,18 +2135,19 @@ func main() {
 <details>
 <summary>ORM 以及数据库驱动</summary>
 
-- [xorm](https://github.com/go-xorm/xorm)：支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
-- [mgo](http://labix.org/mgo)：MongoDB 官方推荐驱动
+- [gorm](https://github.com/jinzhu/gorm): 支持 MySQL、PostgreSQL、SQLite3 以及 SQL Server
+- [xorm](https://github.com/go-xorm/xorm): 支持 MySQL、PostgreSQL、SQLite3 以及 MsSQL
+- [mgo](http://labix.org/mgo): MongoDB 官方推荐驱动
 
 </details>
 
 <details>
 <summary>辅助站点</summary>
 
-- [Go Walker](https://gowalker.org)：Go 语言在线 API 文档
-- [gobuild.io](http://gobuild.io/)：Go 语言在线二进制编译与下载
-- [Rego](http://regoio.herokuapp.com/)：Go 语言正则在线测试
-- [gopm.io](https://gopm.io)：科学下载第三方包
+- [Go Walker](https://gowalker.org): Go 语言在线 API 文档
+- [gobuild.io](http://gobuild.io/): Go 语言在线二进制编译与下载
+- [Rego](http://regoio.herokuapp.com/): Go 语言正则在线测试
+- [gopm.io](https://gopm.io): 科学下载第三方包
 
 </details>
 
