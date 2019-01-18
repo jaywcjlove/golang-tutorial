@@ -18,19 +18,17 @@ Go语言快速入门
 <details>
 <summary>点击展开目录菜单</summary>
 
-<!-- TOC -->
-
 - [安装Go](#安装go)
-- [运行Go](#运行go)
+- [运行Go](#运行go)  
 - [格式化输入输出](#格式化输入输出)
 - [编程基础](#编程基础)
 - [基本类型](#基本类型)
 - [常量变量](#常量变量)
 - [语言运算符](#语言运算符)
 - [流程控制语句](#流程控制语句)
+- [结构体](#结构体)
 - [资源导航](#资源导航)
 
-<!-- /TOC -->
 
 </details>
 
@@ -67,12 +65,12 @@ mkdir -p $HOME/gopath
 
 ```bash
 brew update && brew upgrade # 更新 Homebrew 的信息
+brew update go              # 单独更新 golang
 brew install git            # 安装 git
 brew install go             # 安装 go
 ```
 
 </details>
-
 
 <details>
 <summary>Mac中通过源码安装</summary>
@@ -281,6 +279,18 @@ govendor install +local
 govendor test +local
 ```
 
+
+</details>
+
+
+## 卸载go
+
+<details>
+<summary>卸载Go</summary>
+
+- 删除 Go 的安装文件目录，这通常是在 `Linux`，`macOS` 和 `FreeBSD` 下的 `/usr/local/` go 或者在 Windows 下的 `c:\Go` 下。
+- 同时删除环境变量， `Linux` 和 `FreeBSD` 编辑 `/etc/profile` 或者 `$HOME/.profile`。
+- 如果你是 `macOS` 你需要删除 `/etc/paths.d/go` 文件。
 
 </details>
 
