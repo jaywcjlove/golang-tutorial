@@ -2130,6 +2130,7 @@ func main() {
 - [Beego](http://beego.me/): 重量级 Web 框架
 - [Revel](https://github.com/revel/revel): 较早成熟的重量级 Web 框架
 - [Martini](https://github.com/go-martini/martini): 一个强大为了编写模块化 Web 应用而生的 Go 语言框架
+- [web](https://github.com/hoisie/web): 轻量级超简单的 web 框架。
 
 </details>
 
