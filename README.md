@@ -1,5 +1,6 @@
 Go语言快速入门
 ===
+<!--rehype:style=display: flex; height: 230px; align-items: center; justify-content: center; font-size: 38px;-->
 
 通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。下面所有例子均来源于网络，看文需谨慎后果自负。
 
