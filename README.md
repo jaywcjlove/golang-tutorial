@@ -2,6 +2,8 @@ Go语言快速入门
 ===
 <!--rehype:style=display: flex; height: 230px; align-items: center; justify-content: center; font-size: 38px;-->
 
+[![CI](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml)
+
 通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。下面所有例子均来源于网络，看文需谨慎后果自负。
 
 安装之前需要了解及新建几个必要的文件目录：
@@ -2236,3 +2238,19 @@ func main() {
 - [Go如何改善性能](https://www.youtube.com/watch?v=DJ4d_PZ6Gns)
 
 </details>
+
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/jaywcjlove/shell-tutorial/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/shell-tutorial/CONTRIBUTORS.svg" />
+</a>
+
+Made with [action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
+
