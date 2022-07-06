@@ -1,12 +1,25 @@
 {
+  "version": "1.0.0",
+  "title": "Go语言快速入门",
+  "scripts": {
+    "start": "idoc --watch",
+    "build": "idoc"
+  },
   "markdown-to-html": {
     "github-corners": "https://github.com/jaywcjlove/golang-tutorial",
     "document": {
       "title": "Go 语言快速入门",
       "meta": [
-        { "description": "通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。" },
-        { "keywords": "golang,tutorial,go,golang-tutorial" }
+        {
+          "description": "通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。"
+        },
+        {
+          "keywords": "golang,tutorial,go,golang-tutorial"
+        }
       ]
     }
+  },
+  "devDependencies": {
+    "idoc": "^1.21.4"
   }
 }
