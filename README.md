@@ -4,6 +4,7 @@ Go语言快速入门
 <!--idoc:ignore:end-->
 
 [![CI](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml)
+![golang v1.18.3](https://img.shields.io/static/v1?label=&message=Golang%201.18.3&color=blue&logo=go&logoColor=white)
 
 通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。下面所有例子均来源于网络，看文需谨慎后果自负。
 
@@ -22,6 +23,7 @@ Go语言快速入门
 ---
 
 - [安装Go](#安装go)
+- [卸载Go](#卸载go)
 - [运行Go](#运行go)  
 - [格式化输入输出](#格式化输入输出)
 - [编程基础](#编程基础)
@@ -48,10 +50,12 @@ yum install golang
 ```bash
 # 源码下载
 # 官网源码 https://golang.org/dl/ 需要翻墙
-wget https://storage.googleapis.com/golang/go1.9.darwin-amd64.pkg
-tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-# 新建GOPATH目录
-mkdir -p $HOME/gopath
+wget https://storage.googleapis.com/golang/go1.18.3.linux-amd64.tar.gz
+$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+```
+
+```bash
+export PATH=$PATH:/usr/local/go/bin
 ```
 
 ### Mac中通过brew命令安装
@@ -81,27 +85,44 @@ brew upgrade go             # 更新 go
 ```bash
 → go env
 
-GOARCH="amd64"
+GO111MODULE=""
+GOARCH="arm64"
 GOBIN=""
+GOCACHE="/Users/wangchujiang/Library/Caches/go-build"
+GOENV="/Users/wangchujiang/Library/Application Support/go/env"
 GOEXE=""
-GOHOSTARCH="amd64"
+GOEXPERIMENT=""
+GOFLAGS=""
+GOHOSTARCH="arm64"
 GOHOSTOS="darwin"
+GOINSECURE=""
+GOMODCACHE="/Users/wangchujiang/go/pkg/mod"
+GONOPROXY=""
+GONOSUMDB=""
 GOOS="darwin"
-GOPATH="/Users/kenny/go"
-GORACE=""
-GOROOT="/usr/local/Cellar/go/1.9/libexec"
-GOTOOLDIR="/usr/local/Cellar/go/1.9/libexec/pkg/tool/darwin_amd64"
+GOPATH="/Users/wangchujiang/go"
+GOPRIVATE=""
+GOPROXY="https://proxy.golang.org,direct"
+GOROOT="/usr/local/go"
+GOSUMDB="sum.golang.org"
+GOTMPDIR=""
+GOTOOLDIR="/usr/local/go/pkg/tool/darwin_arm64"
+GOVCS=""
+GOVERSION="go1.18.3"
 GCCGO="gccgo"
+AR="ar"
 CC="clang"
-GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/go-build377856897=/tmp/go-build -gno-record-gcc-switches -fno-common"
 CXX="clang++"
 CGO_ENABLED="1"
+GOMOD="/dev/null"
+GOWORK=""
 CGO_CFLAGS="-g -O2"
 CGO_CPPFLAGS=""
 CGO_CXXFLAGS="-g -O2"
 CGO_FFLAGS="-g -O2"
 CGO_LDFLAGS="-g -O2"
 PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/rn/jv6_kn5j2wv1whyj3pqvpxbw0000gn/T/go-build947462154=/tmp/go-build -gno-record-gcc-switches -fno-common"
 ```
 
 如果需要修改默认的环境变量配置修改 `vim ~/.bash_profile` 或者 `vim ~/.zshrc`
@@ -131,85 +152,59 @@ source /etc/profile
 
 ```bash
 → go --help
-Go is a tool for managing Go source code.
-Go是用于管理Go源代码的工具。
 
-Usage用法:
-  go command [arguments]
+Go 是一个管理 Go 源代码的工具。
 
-The commands are:
+用法:
 
-  build 命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
-    -o 指定输出的文件名，可以带上路径，例如 go build -o a/b/c
-    -i 安装相应的包，编译+go install
-    -a 更新全部已经是最新的包的，但是对标准包不适用
-    -n 把需要执行的编译命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-    -p n 指定可以并行可运行的编译数目，默认是CPU数目
-    -race 开启编译的时候自动检测数据竞争的情况，目前只支持64位的机器
-    -v 打印出来我们正在编译的包名
-    -work 打印出来编译时候的临时文件夹名称，并且如果已经存在的话就不要删除
-    -x 打印出来执行的命令，其实就是和-n的结果类似，只是这个会执行
-    -ccflags 'arg list' 传递参数给5c, 6c, 8c 调用
-    -compiler name 指定相应的编译器，gccgo还是gc
-    -gccgoflags 'arg list' 传递参数给gccgo编译连接调用
-    -gcflags 'arg list' 传递参数给5g, 6g, 8g 调用
-    -installsuffix suffix 为了和默认的安装包区别开来，采用这个前缀来重新安装那些依赖的包，-race的时候默认已经是-installsuffix race,大家可以通过-n命令来验证
-    -ldflags 'flag list' 传递参数给5l, 6l, 8l 调用
-    -tags 'tag list' 设置在编译的时候可以适配的那些tag，详细的tag限制参考里面的http://golang.org/pkg/go/build/
-  clean       删除掉执行其它命令时产生的一些文件和目录。
-    -i 清除关联的安装的包和可运行文件，也就是通过go install安装的文件
-    -n 把需要执行的清除命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-    -r 循环的清除在import中引入的包
-    -x 打印出来执行的详细命令，其实就是-n打印的执行版本
-  doc 命令可以打印附于Go语言程序实体上的文档。
-  env 用于打印Go语言的环境信息。
-  bug 启动错误报告。
-  fix 把指定代码包的所有Go语言源码文件中的旧版本代码修正为新版本的代码。
-  fmt 在包源上运行gofmt。
-    -l 显示那些需要格式化的文件
-    -w 把改写后的内容直接写入到文件中，而不是作为结果打印到标准输出。
-    -r 添加形如“a[b:len(a)] -> a[b:]”的重写规则，方便我们做批量替换
-    -s 简化文件中的代码
-    -d 显示格式化前后的diff而不是写入文件，默认是false
-    -e 打印所有的语法错误到标准输出。如果不使用此标记，则只会打印不同行的前10个错误。
-    -cpuprofile 支持调试模式，写入相应的cpufile到指定的文件
-  generate 通过处理源生成Go文件。
-  get 下载或更新安装指定的代码包及其依赖包，并对它们进行编译和安装。
-    -d 只下载不安装
-    -f 只有在你包含了-u参数的时候才有效，不让-u去验证import中的每一个都已经获取了，这对于本地fork的包特别有用
-    -fix 在获取源码之后先运行fix，然后再去做其他的事情
-    -t 同时也下载需要为运行测试所需要的包
-    -u 强制使用网络去更新包和它的依赖包
-    -v 显示执行的命令
-  install 用于编译并安装指定的代码包及它们的依赖包。
-  list 列出指定的代码包的信息。
-  run 命令可以编译并运行命令源码文件。
-  test 对Go语言编写的程序进行测试。
-    -bench regexp 执行相应的benchmarks，例如 -bench=.
-    -cover 开启测试覆盖率
-    -run regexp 只运行regexp匹配的函数，例如 -run=Array 那么就执行包含有Array开头的函数
-    -v 显示测试的详细命令
-  tool 运行指定的go工具
-    go tool fix . 用来修复以前老版本的代码到新版本，例如go1之前老版本的代码转化到go1,例如API的变化
-    go tool vet directory|files 用来分析当前目录的代码是否都是正确的代码,例如是不是调用fmt.Printf里面的参数不正确，例如函数里面提前return了然后出现了无用代码之类的。
-  version 打印Go的版本信息
-  vet 用于检查Go语言源码中静态错误的简单工具。
+  go <command> [arguments]
 
-Use "go help [command]" for more information about a command.
+命令是：
 
-Additional help topics:
+  bug         开始一个错误报告。 start a bug report
+  build       编译包和依赖。 compile packages and dependencies
+  clean       删除目标文件和缓存文件。 remove object files and cached files
+  doc         显示包或符号的文档。 show documentation for package or symbol
+  env         打印Go环境信息。 print Go environment information
+  fix         更新软件包以使用新的 API。 update packages to use new APIs
+  fmt         gofmt（重新格式化）包源。 gofmt (reformat) package sources
+  generate    通过处理源生成 Go 文件。 generate Go files by processing source
+  get         将依赖项添加到当前模块并安装它们。 add dependencies to current module and install them
+  install     编译和安装包和依赖项。 compile and install packages and dependencies
+  list        列出包或模块。 list packages or modules
+  mod         模块维护。 module maintenance
+  work        工作空间维护。 workspace maintenance
+  run         编译并运行 Go 程序。 compile and run Go program
+  test        测试包。 test packages
+  tool        运行指定的 go 工具。 run specified go tool
+  version     打印 Go 版本。 print Go version
+  vet         报告包中可能出现的错误。 report likely mistakes in packages
 
-  c           calling between Go and C
-  buildmode   description of build modes
-  filetype    file types
-  gopath      GOPATH environment variable
-  environment environment variables
-  importpath  import path syntax
-  packages    description of package lists
-  testflag    description of testing flags
-  testfunc    description of testing functions
+使用“go help <command>”获取有关命令的更多信息。
 
-Use "go help [topic]" for more information about that topic.
+其他帮助主题：
+
+  buildconstraint 构建约束。 build constraints
+  buildmode       构建模式。 build modes
+  c               Go 和 C 之间的调用。 calling between Go and C
+  cache           构建和测试缓存。 build and test caching
+  environment     环境变量。 environment variables
+  filetype        文件类型。 file types
+  go.mod          go.mod 文件。 the go.mod file
+  gopath          GOPATH 环境变量。 GOPATH environment variable
+  gopath-get      遗留的 GOPATH 去获取。 legacy GOPATH go get
+  goproxy         模块代理协议。 module proxy protocol
+  importpath      导入路径语法。 import path syntax
+  modules         模块、模块版本等。 modules, module versions, and more
+  module-get      模块感知 go get。 module-aware go get
+  module-auth     使用 go.sum 进行模块认证。 module authentication using go.sum
+  packages        包装清单和模式。 package lists and patterns
+  private         下载非公开代码的配置。 configuration for downloading non-public code
+  testflag        测试标志。 testing flags
+  testfunc        测试功能。 testing functions
+  vcs             使用 GOVCS 控制版本控制。 controlling version control with GOVCS
+
+Use "go help <topic>" for more information about that topic.
 ```
 
 其它命令
@@ -264,8 +259,7 @@ govendor test +local
 
 - 删除 Go 的安装文件目录，这通常是在 `Linux`，`macOS` 和 `FreeBSD` 下的 `/usr/local/` go 或者在 Windows 下的 `c:\Go` 下。
 - 同时删除环境变量， `Linux` 和 `FreeBSD` 编辑 `/etc/profile` 或者 `$HOME/.profile`。
-- 如果你是 `macOS` 你需要删除 `/etc/paths.d/go` 文件。
-
+- 如果你是 `macOS` 你需要删除 `/etc/paths.d/go`，`/usr/local/go` 文件。
 
 ## 运行Go
 
@@ -456,15 +450,15 @@ fmt.Println(*p) // 通过指针 p 读取 i
 package main
 import "fmt"
 func main() {
-	i, j := 42, 2701
-	p := &i         // 指向我 i
-	fmt.Println(*p) // 通过指针读 i
-	*p = 21         // 通过指针设置 i
-	fmt.Println(i)  // 看到i的新值
+  i, j := 42, 2701
+  p := &i         // 指向我 i
+  fmt.Println(*p) // 通过指针读 i
+  *p = 21         // 通过指针设置 i
+  fmt.Println(i)  // 看到i的新值
 
-	p = &j         // 指向我 j
-	*p = *p / 37   // 通过指针划分 j
-	fmt.Println(j) // 看到j的新值
+  p = &j         // 指向我 j
+  *p = *p / 37   // 通过指针划分 j
+  fmt.Println(j) // 看到j的新值
 }
 ```
 
@@ -994,21 +988,21 @@ int val = a[2][3]
 package main
 import "fmt"
 type Vertex struct {
-	X int
-	Y int
+  X int
+  Y int
 }
 func main() {
   fmt.Println(Vertex{1, 2})
   
   // 结构体字段使用点号来访问。
-	v := Vertex{1, 2}
-	v.X = 4
+  v := Vertex{1, 2}
+  v.X = 4
   fmt.Println(v.X)
   
   // 结构体字段可以通过结构体指针来访问。
-	e := Vertex{1, 2}
-	p := &e
-	p.X = 1e9
+  e := Vertex{1, 2}
+  p := &e
+  p.X = 1e9
   fmt.Println(e)
   
   
@@ -1454,8 +1448,8 @@ func main() {
 | 运算符 | 描述 | 实例 |
 | ---- | ---- | ---- |
 | && | 逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。 | (A && B) 为 False |
-| \|\| | 逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。|	(A || B) 为 True |
-| ! | 逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。 |	!(A && B) 为 True |
+| \|\| | 逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。|  (A || B) 为 True |
+| ! | 逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。 |  !(A && B) 为 True |
 
 ### 位运算符
 
@@ -1464,8 +1458,8 @@ package main
 import "fmt"
 func main() {
 
-  var a uint = 60	/* 60 = 0011 1100 */  
-  var b uint = 13	/* 13 = 0000 1101 */
+  var a uint = 60  /* 60 = 0011 1100 */  
+  var b uint = 13  /* 13 = 0000 1101 */
   var c uint = 0          
 
   c = a & b       /* 12 = 0000 1100 */ 
@@ -1489,9 +1483,9 @@ Go 语言支持的位运算符如下表所示。假定 A 为60，B 为13：
 
 | 运算符 | 描述 | 实例 |
 | ---- | ---- | ---- |
-| & | 按位与运算符"&"是双目运算符。 其功能是参与运算的两数各对应的二进位相与。 |	(A & B) 结果为 12, 二进制为 0000 1100 |
-| \| | 按位或运算符 \| 是双目运算符。 其功能是参与运算的两数各对应的二进位相或。 |	(A \| B) 结果为 61, 二进制为 0011 1101 |
-| ^ | 按位异或运算符"^"是双目运算符。 其功能是参与运算的两数各对应的二进位相异或，当两对应的二进位相异时，结果为1。 |	(A ^ B) 结果为 49, 二进制为 0011 0001 |
+| & | 按位与运算符"&"是双目运算符。 其功能是参与运算的两数各对应的二进位相与。 |  (A & B) 结果为 12, 二进制为 0000 1100 |
+| \| | 按位或运算符 \| 是双目运算符。 其功能是参与运算的两数各对应的二进位相或。 |  (A \| B) 结果为 61, 二进制为 0011 1101 |
+| ^ | 按位异或运算符"^"是双目运算符。 其功能是参与运算的两数各对应的二进位相异或，当两对应的二进位相异时，结果为1。 |  (A ^ B) 结果为 49, 二进制为 0011 0001 |
 | << | 左移运算符"<<"是双目运算符。左移n位就是乘以2的n次方。 其功能把"<<"左边的运算数的各二进位全部左移若干位，由"<<"右边的数指定移动的位数，高位丢弃，低位补0。 | A << 2 结果为 240 ，二进制为 1111 0000 |
 | >> | 右移运算符">>"是双目运算符。右移n位就是除以2的n次方。 其功能是把">>"左边的运算数的各二进位全部右移若干位，">>"右边的数指定移动的位数。| A >> 2 结果为 15 ，二进制为 0000 1111 |
 
@@ -1569,7 +1563,7 @@ func main() {
   fmt.Printf("第 3 行 - c 变量类型为 = %T\n", c ); // 第 3 行 - c 变量类型为 = float32
 
   /*  & 和 * 运算符实例 */
-  ptr = &a	/* 'ptr' 包含了 'a' 变量的地址 */
+  ptr = &a  /* 'ptr' 包含了 'a' 变量的地址 */
   fmt.Printf("a 的值为  %d\n", a);   // a 的值为  4
   fmt.Printf("*ptr 为 %d\n", *ptr); // *ptr 为 4
 }
