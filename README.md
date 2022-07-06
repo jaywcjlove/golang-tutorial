@@ -36,18 +36,14 @@ Go语言快速入门
 
 ## 安装Go
 
-<details>
-<summary>CentOS7中通过yum安装</summary>
+### CentOS7 中通过 yum 安装
 
 ```bash
 # CentOS7 可以只用使用yum安装
 yum install golang  
 ```
 
-</details>
-
-<details>
-<summary>CentOS7中通过源码安装</summary>
+### CentOS7 中通过源码安装
 
 ```bash
 # 源码下载
@@ -58,10 +54,7 @@ tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
 mkdir -p $HOME/gopath
 ```
 
-</details>
-
-<details>
-<summary>Mac中通过brew命令安装</summary>
+### Mac中通过brew命令安装
 
 使用[home brew](http://brew.sh/)安装方便快捷安装Go，如果你想要在你的 Mac 系统上安装 Go，则必须使用 `Intel 64` 位处理器，Go 不支持 `PowerPC` 处理器。
 
@@ -73,10 +66,7 @@ brew install go             # 安装 go
 brew upgrade go             # 更新 go
 ```
 
-</details>
-
-<details>
-<summary>Mac中通过源码安装</summary>
+### Mac中通过源码安装
 
 通过源代码编译安装的过程与环境变量的配置与在 Linux 系统非常相似，因此不再赘述。
 
@@ -84,11 +74,7 @@ brew upgrade go             # 更新 go
 
 在 Mac 系统下使用到的 C 工具链是 Xcode 的一部分，因此你需要通过安装 Xcode 来完成这些工具的安装。你并不需要安装完整的 Xcode，而只需要安装它的命令行工具部分。
 
-</details>
-
-
-<details>
-<summary>环境变量配置</summary>
+### 环境变量配置
 
 通过`go env`查看go的详细信息
 
@@ -141,11 +127,7 @@ export PATH=$PATH:$GOPATH/bin
 source /etc/profile
 ```
 
-</details>
-
-
-<details>
-<summary>标准命令详解</summary>
+### 标准命令详解
 
 ```bash
 → go --help
@@ -237,11 +219,7 @@ cat $GOROOT/VERSION  # 查看版本
 $GOROOT/src/all.bash # 测试用例正确
 ```
 
-</details>
-
-
-<details>
-<summary>依赖管理工具</summary>
+### 依赖管理工具
 
 目前 Go 语言常用的依赖管理工具，有三个 [godep](https://github.com/tools/godep)、[vendor](https://github.com/kardianos/govendor)和[db](https://github.com/constabulary/gb/)，`vendor` 是go 1.5 官方引入管理包依赖的方式，1.6正式引入。所以这里推荐是用[vendor](https://github.com/kardianos/govendor)来管理你的依赖。
 
@@ -282,26 +260,16 @@ govendor install +local
 govendor test +local
 ```
 
-
-</details>
-
-
 ## 卸载go
-
-<details>
-<summary>卸载Go</summary>
 
 - 删除 Go 的安装文件目录，这通常是在 `Linux`，`macOS` 和 `FreeBSD` 下的 `/usr/local/` go 或者在 Windows 下的 `c:\Go` 下。
 - 同时删除环境变量， `Linux` 和 `FreeBSD` 编辑 `/etc/profile` 或者 `$HOME/.profile`。
 - 如果你是 `macOS` 你需要删除 `/etc/paths.d/go` 文件。
 
-</details>
-
 
 ## 运行Go
 
-<details>
-<summary>运行Go文档，在线预览文档</summary>
+### 运行Go文档，在线预览文档
 
 ```bash
 # 如果你的 godoc 命令不存在，运行它安装
@@ -311,10 +279,7 @@ $ godoc -http=:6060
 # 运行上面一条命令，可访问文档http://localhost:6060/
 ```
 
-</details>
-
-<details>
-<summary>通过go命令运行</summary>
+### 通过go命令运行
 
 我们先写一段GO代码，很简单就是打印输出一个`hello world!`, 保存为[hello.go](./example/hello/hello.go)文件
 
@@ -332,10 +297,7 @@ func main() {
 go run hello.go
 ```
 
-</details>
-
-<details>
-<summary>通过go命令编译运行</summary>
+### 通过go命令编译运行
 
 GO程序的代码是可以直接编译成`exe文件` 或者 `二进制文件`直接运行，在[hello.go](./example/hello/hello.go)目录下运行下面命令，即可把go程序编译成二进制文件
 
@@ -345,21 +307,13 @@ go build hello.go
 
 上面命令文件可以编译成一个`hello`可执行文件，然后直接在当前目录下 `./hello` 运行，可以输出`hello world!`。
 
-</details>
-
-<details>
-<summary>在浏览器中运行</summary>
+### 在浏览器中运行
 
 Go Playground 允许在浏览器里面编辑运行 Go 语言代码。在浏览器中打开 https://play.golang.org/ (需要穿越才能打开) ，输入代码，点击 Run，看看会发生什么？还有个 Share 按钮，点击它会得到一个用于分享的网址，任何人都能代开这个链接，试一试 https://play.golang.org/p/UIOwu0DBQV
 
-</details>
-
-
 ## 格式化输入输出
 
-
-<details>
-<summary>输入输出语法方法</summary>
+### 输入输出语法方法
 
 > `%[标记][宽度][.精度][arg索引]动词`  
 > `Print(arg列表)`、`Println(arg列表)`、`Printf(格式字符串, arg列表)`  
@@ -376,10 +330,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>标记</summary>
+### 标记
 
 ```
 + 总打印数值的正负号；对于%q（%+q）保证只输出ASCII编码的字符。
@@ -396,10 +347,7 @@ func main() {
 - 其中 `0` 和 `-` 不能同时使用，优先使用 `-` 而忽略 `0`。  
 - 标记有时会被占位符忽略，所以不要指望它们。例如十进制没有备用格式，因此 `%#d` 与 `%d` 的行为相同。
 
-</details>
-
-<details>
-<summary>宽度和精度</summary>
+### 宽度和精度
 
 `[宽度][.精度]`都可以写成以下三种形式：`数值`，`*`，`arg索引*`  
 
@@ -413,17 +361,11 @@ func main() {
 - 精度值：对于浮点型，用于控制小数位数，对于字符串或字节数组，用于控制字符数量（不是字节数量）。
 - 对于浮点型而言，动词 g/G 的精度值比较特殊，在适当的情况下，g/G 会设置总有效数字，而不是小数位数。
 
-</details>
-
-<details>
-<summary>arg 索引</summary>
+### arg 索引
 
 由中括号和 arg 序号组成（就像这个实例`"abc%+ #8.3[3]vdef"`中的[3])，用于指定当前要处理的 arg 的序号，序号从 1 开始：`'[' + arg序号 + ']'`
 
-</details>
-
-<details>
-<summary>动词/通用动词</summary>
+### 动词/通用动词
 
 - `v`：默认格式，不同类型的默认格式如下：
     > 布尔型：`t`
@@ -440,17 +382,11 @@ func main() {
 
 注意事项：`动词`不能省略，不同的数据类型支持的动词不一样。
 
-</details>
-
-<details>
-<summary>布尔型</summary>
+### 布尔型
 
 -`t` ：输出 true 或 false 字符串。
 
-</details>
-
-<details>
-<summary>整型</summary>
+### 整型
 
 - `b/o/d`：输出 2/8/10 进制格式
 - `x/X  `：输出 16 进制格式（小写/大写）
@@ -464,20 +400,14 @@ func main() {
 对于 U：
 - 如果使用 "#" 标记，则会在 Unicode 码点后面添加相应的 '字符'（前提是该字符必须可显示）
 
-</details>
-
-<details>
-<summary>浮点型和复数型</summary>
+### 浮点型和复数型
 
 - `b`：科学计数法（以 2  为底）
 - `e/E`：科学计数法（以 10 为底，小写 e/大写 E）
 - `f/F`：普通小数格式（两者无区别）
 - `g/G`：大指数（指数 >= 6）使用 %e/%E，其它情况使用 %f/%F
 
-</details>
-
-<details>
-<summary>字符串或字节切片</summary>
+### 字符串或字节切片
 
 - `s` ：普通字符串
 - `q` ：双引号引起来的 Go 语法字符串
@@ -492,10 +422,7 @@ func main() {
 - 如果使用了 " " 标记，则在每个元素之间添加空格。
 - 如果使用了 "#" 标记，则在十六进制格式之前添加 0x 前缀。
 
-</details>
-
-<details>
-<summary>指针类型</summary>
+### 指针类型
 
 - `p` ：带 0x 前缀的十六进制地址值。
 - `#p`：不带 0x 前缀的十六进制地址值。
@@ -541,10 +468,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>复合类型</summary>
+### 复合类型
 
 复合类型将使用不同的格式输出，格式如下：
 
@@ -558,10 +482,7 @@ func main() {
 复合类型本身没有动词，动词将应用到复合类型的元素上。
 结构体可以使用 "+v" 同时输出字段名。
 
-</details>
-
-<details>
-<summary>格式化输入</summary>
+### 格式化输入
 
 ```go
 // 格式化输入：从输入端读取字符串（以空白分隔的值的序列），
@@ -580,12 +501,9 @@ Scanf(格式字符串, arg列表)
 // Scan 类函数会返回已处理的 arg 数量和遇到的错误信息。
 ```
 
-</details>
-
 ## 编程基础
 
-<details>
-<summary>内置关键字</summary>
+### 内置关键字
 
 ```go
 break      default       func      interface    select
@@ -595,10 +513,7 @@ const      fallthrough   if        range        type
 continue   for           import    return       var
 ```
 
-</details>
-
-<details>
-<summary>预定义标识符</summary>
+### 预定义标识符
 
 ```go
 append  bool    byte    cap     close  complex complex64 complex128 uint16
@@ -607,18 +522,12 @@ int32   int64   iota    len     make   new     nil       panic      uint64
 print   println real    recover string true    uint      uint8      uintptr
 ```
 
-</details>
-
-<details>
-<summary>行分隔符</summary>
+### 行分隔符
 
 - 在 Go 程序中，一行代表一个语句结束，不需要分隔符。
 - 打算将多个语句写在同一行，它们则必须使用 `;` 人为区分，并不鼓励这种做法。
 
-</details>
-
-<details>
-<summary>注释方法</summary>
+### 注释方法
 
 ```go
 // 单行注释
@@ -628,10 +537,7 @@ print   println real    recover string true    uint      uint8      uintptr
 */
 ```
 
-</details>
-
-<details>
-<summary>标识符</summary>
+### 标识符
 
 - 标识符用来命名变量、类型等程序实体。
 - 第一个字符必须是字母或下划线而不能是数字
@@ -651,10 +557,7 @@ case #（Go 语言的关键字）
 a+b  #（运算符是不允许的）
 ```
 
-</details>
-
-<details>
-<summary>包引用 import</summary>
+### 包引用 import
 
 ```go
 import "fmt"
@@ -698,10 +601,7 @@ main.go中如何调用add.go、subtract.go或者是multiply.go文件中的函数
 > 要调用`multiply.go`中的函数，必须要引入包"multi"，`import "package-demo/cal/multi"`  
 > Go中如果函数名的首字母大写，表示该函数是公有的，可以被其他程序调用，如果首字母小写，该函数就是是私有的
 
-</details>
-
-<details>
-<summary>包别名</summary>
+### 包别名
 
 ```go
 import(
@@ -715,11 +615,7 @@ import ff "fmt"
 ff.Println('Hello World!')
 ```
 
-</details>
-
-
-<details>
-<summary>省略调用</summary>
+### 省略调用
 
 ```go
 import(
@@ -731,23 +627,16 @@ func main() {
 }
 ```
 
-</details>
-
-
-<details>
-<summary>可见性规则</summary>
+### 可见性规则
 
 Go语言中约定使用 **大小写** 来决定常量、变量、类型、接口、结构或函数是否可以被外部包所调用
 
 - 函数名字首字母 **小写** 即为 `private` 私有的
 - 函数名字首字母 **大写** 即为 `public` 公有
 
-</details>
-
 ## 基本类型
 
-<details>
-<summary>布尔型</summary>
+### 布尔型
 
 ```go
 var b bool
@@ -761,10 +650,7 @@ fmt.Printf("e is of type %t\n", e)
 - 取值范围：true/false
 - 只能使用true/false值，不能使用数字代替布尔值
 
-</details>
-
-<details>
-<summary>整形 int/uint</summary>
+### 整形 int/uint
 
 ```go
 package main
@@ -789,10 +675,7 @@ func main() {
 - int/uint
 - 根据平台可能为32/64位
 
-</details>
-
-<details>
-<summary>8位整型 int8/uint8</summary>
+### 8位整型 int8/uint8
 
 ```go
 u8 := []uint8{98, 99}
@@ -813,10 +696,7 @@ fmt.Printf("%08b %d \n", e, e)
 - 长度：1字节
 - 取值范围：-128~127/0~255
 
-</details>
-
-<details>
-<summary>字节型 byte</summary>
+### 字节型 byte
 
 ```go
 // 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
@@ -903,37 +783,25 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>16位整型 int16/uint16</summary>
+### 16位整型 int16/uint16
 
 - int16/uint16
 - 长度：2字节
 - 取值范围：-32768~32767/0~65535
 
-</details>
-
-<details>
-<summary>32位整型 int32(别名rune)/uint32</summary>
+### 32位整型 int32(别名rune)/uint32
 
 - int32(别名rune)/uint32
 - 长度：4字节
 - 取值范围：-2^32/2~2^32/2-1/0~2^32-1
 
-</details>
-
-<details>
-<summary>64位整型 int64/uint64</summary>
+### 64位整型 int64/uint64
 
 - int64/uint64
 - 长度：8字节
 - 取值范围：-2^64/2~2^64/2-1/0~2^64-1
 
-</details>
-
-<details>
-<summary>浮点型 float32/float64</summary>
+### 浮点型 float32/float64
 
 ```go
 package main
@@ -960,18 +828,12 @@ func main() {
 - 长度：4/8字节
 - 小数位：精确到 7/15 位小数
 
-</details>
-
-<details>
-<summary>复数 complex64/complex128</summary>
+### 复数 complex64/complex128
 
 - complex64/complex128
 - 长度：8/16
 
-</details>
-
-<details>
-<summary>指针整数型 uintptr</summary>
+### 指针整数型 uintptr
 
 用于指针运算，GC 不把 uintptr 当指针，uintptr 无法持有对象。uintptr 类型的目标会被回收。
 
@@ -1040,10 +902,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>数组类型 array</summary>
+### 数组类型 array
 
 数组声明语法
 
@@ -1129,10 +988,7 @@ a = [3][4]int{
 int val = a[2][3]
 ```
 
-</details>
-
-<details>
-<summary>结构类型 struct</summary>
+### 结构类型 struct
 
 ```go
 package main
@@ -1204,10 +1060,7 @@ The string is: Chris
 
 **使用 new**
 
-</details>
-
-<details>
-<summary>字符串类型 string</summary>
+### 字符串类型 string
 
 ```go
 var str string //声明一个字符串
@@ -1224,10 +1077,7 @@ len函数是Go中内置函数，不引入strings包即可使用。len(string)返
 - len(map) 字典中元素个数,如果入参为nil则返回0
 - len(Channel) Channel buffer队列中元素个数
 
-</details>
-
-<details>
-<summary>接口类型 inteface</summary>
+### 接口类型 inteface
 
 ```go
 package main
@@ -1277,10 +1127,7 @@ func main() {
 
 实例：[inteface.go](./example/inteface/inteface.go)
 
-</details>
-
-<details>
-<summary>函数类型 func</summary>
+### 函数类型 func
 
 ```go
 package main
@@ -1301,11 +1148,7 @@ func main() {
 
 实例：[func.go](./example/func/func.go)
 
-</details>
-
-<details>
-<summary>引用类型 func</summary>
-
+### 引用类型 func
 
 **切片**
 
@@ -1370,10 +1213,7 @@ func removeColor(colors map[string]string, key string) {
 
 - chan
 
-</details>
-
-<details>
-<summary>类型别名</summary>
+### 类型别名
 
 ```go
 type (
@@ -1385,12 +1225,9 @@ var b 文本
 b = "别名类型，可以是中文！"
 ```
 
-</details>
-
 ## 常量变量
 
-<details>
-<summary>常量 const</summary>
+### 常量 const
 
 ```go
 package main
@@ -1439,10 +1276,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>变量 var</summary>
+### 变量 var
 
 ```go
 var (
@@ -1473,10 +1307,7 @@ var a, _, c, d int = 1, 2, 3, 4
 - 所有变量都可以使用类型推断
 - 局部变量不可以使用`var()`简写的形式
 
-</details>
-
-<details>
-<summary>变量的类型转换</summary>
+### 变量的类型转换
 
 ```go
 // 只能类型显式转换
@@ -1486,10 +1317,7 @@ b := int(a)
 // 不兼容的类型不能转换类型
 ```
 
-</details>
-
-<details>
-<summary>多变量声明</summary>
+### 多变量声明
 
 ```go
 var x, y int
@@ -1506,12 +1334,9 @@ var e, f = 123, "hello"
 //g, h := 123, "hello"
 ```
 
-</details>
-
 ## 语言运算符
 
-<details>
-<summary>算术运算符</summary>
+### 算术运算符
 
 ```go
 package main
@@ -1549,10 +1374,7 @@ func main() {
 | ++ | 自增 | A++ 输出结果 11 |
 | -- | 自减 | A-- 输出结果 9 |
 
-</details>
-
-<details>
-<summary>关系运算符</summary>
+### 关系运算符
 
 ```go
 package main
@@ -1599,10 +1421,7 @@ func main() {
 | >=  | 检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。 |  (A >= B) 为 False |
 | <=  | 检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。 | A <= B) 为 True |
 
-</details>
-
-<details>
-<summary>逻辑运算符</summary>
+### 逻辑运算符
 
 ```go
 package main
@@ -1638,10 +1457,7 @@ func main() {
 | \|\| | 逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。|	(A || B) 为 True |
 | ! | 逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。 |	!(A && B) 为 True |
 
-</details>
-
-<details>
-<summary>位运算符</summary>
+### 位运算符
 
 ```go
 package main
@@ -1679,10 +1495,7 @@ Go 语言支持的位运算符如下表所示。假定 A 为60，B 为13：
 | << | 左移运算符"<<"是双目运算符。左移n位就是乘以2的n次方。 其功能把"<<"左边的运算数的各二进位全部左移若干位，由"<<"右边的数指定移动的位数，高位丢弃，低位补0。 | A << 2 结果为 240 ，二进制为 1111 0000 |
 | >> | 右移运算符">>"是双目运算符。右移n位就是除以2的n次方。 其功能是把">>"左边的运算数的各二进位全部右移若干位，">>"右边的数指定移动的位数。| A >> 2 结果为 15 ，二进制为 0000 1111 |
 
-</details>
-
-<details>
-<summary>赋值运算符</summary>
+### 赋值运算符
 
 ```go
 package main
@@ -1739,10 +1552,7 @@ func main() {
 | ^= | 按位异或后赋值s | C ^= 2 等于 C = C ^ 2 |
 | \|= | 按位或后赋值s | C \|= 2 等于 C = C \| 2 |
 
-</details>
-
-<details>
-<summary>其他运算符</summary>
+### 其他运算符
 
 ```go
 package main
@@ -1770,10 +1580,7 @@ func main() {
 | & | 返回变量存储地址 | &a; 将给出变量的实际地址。 |
 | * | 指针变量。 | *a; 是一个指针变量 |
 
-</details>
-
-<details>
-<summary>运算符优先级</summary>
+### 运算符优先级
 
 ```go
 package main
@@ -1808,12 +1615,9 @@ func main() {
 | 2 | && |
 | 1 | \|\| |
 
-</details>
-
 ## 流程控制语句
 
-<details>
-<summary>for 循环语句</summary>
+### for 循环语句
 
 ```go
 package main
@@ -1843,10 +1647,7 @@ func main() {
 1. 循环条件表达式：每轮迭代开始前被求值
 1. 后置语句：每轮迭代后被执行
 
-</details>
-
-<details>
-<summary>if 语句</summary>
+### if 语句
 
 ```go
 package main
@@ -1890,10 +1691,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>if 和 else 语句</summary>
+### if 和 else 语句
 
 ```go
 package main
@@ -1922,10 +1720,7 @@ func main() {
 
 在 if 的便捷语句定义的变量同样可以在任何对应的 else 块中使用。
 
-</details>
-
-<details>
-<summary>switch 语句</summary>
+### switch 语句
 
 ```go
 package main
@@ -1995,10 +1790,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>defer 语句</summary>
+### defer 语句
 
 ```go
 package main
@@ -2036,8 +1828,7 @@ func main() {
 
 ## 结构体
 
-<details>
-<summary>结构体字段</summary>
+### 结构体字段
 
 结构体字段使用点号来访问。
 
@@ -2055,10 +1846,7 @@ func main() {
 }
 ```
 
-</details>
-
-<details>
-<summary>结构体指针</summary>
+### 结构体指针
 
 结构体指针使用 & 来访问。
 
@@ -2078,10 +1866,7 @@ func main() {
 
 ```
 
-</details>
-
-<details>
-<summary>结构体文法</summary>
+### 结构体文法
 
 > 结构体文法表示通过结构体字段的值作为列表来新分配一个结构体。
 > 使用 Name: 语法可以仅列出部分字段。（字段名的顺序无关。）  
