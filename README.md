@@ -1,6 +1,7 @@
+<!--idoc:ignore:start-->
 Go语言快速入门
 ===
-<!--rehype:style=display: flex; height: 230px; align-items: center; justify-content: center; font-size: 38px;-->
+<!--idoc:ignore:end-->
 
 [![CI](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml)
 
@@ -15,11 +16,10 @@ Go语言快速入门
 - GOPATH 目录下新建 `bin` 目录，该目录用于存放项目中所生成的可执行文件。
 - GOPATH 目录下新建 `pkg` 目录，该目录用于存放编译生成的库文件。
 
+<!--idoc:ignore:start-->
+
 目录
 ---
-
-<details>
-<summary>点击展开目录菜单</summary>
 
 - [安装Go](#安装go)
 - [运行Go](#运行go)  
@@ -32,8 +32,7 @@ Go语言快速入门
 - [结构体](#结构体)
 - [资源导航](#资源导航)
 
-
-</details>
+<!--idoc:ignore:end-->
 
 ## 安装Go
 
