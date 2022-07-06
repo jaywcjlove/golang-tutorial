@@ -10,6 +10,6 @@
     "url": "https://github.com/jaywcjlove/golang-tutorial"
   },
   "devDependencies": {
-    "idoc": "^1.21.4"
+    "idoc": "1.21.4"
   }
 }
