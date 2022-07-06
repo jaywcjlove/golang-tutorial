@@ -2,10 +2,10 @@ package main
 
 
 import (
-	"html/template"
-	"log"
-	"os"
-	"github.com/gin-gonic/gin"
+  "html/template"
+  "log"
+  "os"
+  "github.com/gin-gonic/gin"
 )
 
 var html = template.Must(template.New("https").Parse(`
@@ -21,18 +21,18 @@ var html = template.Must(template.New("https").Parse(`
 
 
 func main() {
-	logger := log.New(os.Stderr, "", 0)
-	logger.Println("[WARNING] DON'T USE THE EMBED CERTS FROM THIS EXAMPLE IN PRODUCTION ENVIRONMENT, GENERATE YOUR OWN!")
+  logger := log.New(os.Stderr, "", 0)
+  logger.Println("[WARNING] DON'T USE THE EMBED CERTS FROM THIS EXAMPLE IN PRODUCTION ENVIRONMENT, GENERATE YOUR OWN!")
 
-	r := gin.Default()
-	r.SetHTMLTemplate(html)
+  r := gin.Default()
+  r.SetHTMLTemplate(html)
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(200, "https", gin.H{
-			"status": "success",
-		})
-	})
+  r.GET("/", func(c *gin.Context) {
+    c.HTML(200, "https", gin.H{
+      "status": "success",
+    })
+  })
 
-	// Listen and Server in https://127.0.0.1:8080
-	r.Run(":8083")
+  // Listen and Server in https://127.0.0.1:8080
+  r.Run(":8083")
 }

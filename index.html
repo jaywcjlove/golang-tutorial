@@ -31,7 +31,10 @@
     </header>
     <div class="warpper-content warpper">
       <markdown-style>
-        <p><a href="https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml"><img src="https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
+        <p>
+          <a href="https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml"><img src="https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+          <img src="https://img.shields.io/static/v1?label=&#x26;message=Golang%201.18.3&#x26;color=blue&#x26;logo=go&#x26;logoColor=white" alt="golang v1.18.3">
+        </p>
         <p>通过简单的例子，来快速入门Go语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。下面所有例子均来源于网络，看文需谨慎后果自负。</p>
         <p>安装之前需要了解及新建几个必要的文件目录：</p>
         <ul>
@@ -55,16 +58,15 @@ yum install golang
         <h3 id="centos7-中通过源码安装"><a aria-hidden="true" tabindex="-1" href="#centos7-中通过源码安装" class="anchor"><span class="icon icon-link"></span></a>CentOS7 中通过源码安装</h3>
         <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 源码下载</span>
 </span><span class="code-line line-number" line="2"><span class="token comment"># 官网源码 https://golang.org/dl/ 需要翻墙</span>
-</span><span class="code-line line-number" line="3"><span class="token function">wget</span> https://storage.googleapis.com/golang/go1.9.darwin-amd64.pkg
-</span><span class="code-line line-number" line="4"><span class="token function">tar</span> zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-</span><span class="code-line line-number" line="5"><span class="token comment"># 新建GOPATH目录</span>
-</span><span class="code-line line-number" line="6"><span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/gopath
+</span><span class="code-line line-number" line="3"><span class="token function">wget</span> https://storage.googleapis.com/golang/go1.18.3.linux-amd64.tar.gz
+</span><span class="code-line line-number" line="4">$ <span class="token function">rm</span> -rf /usr/local/go <span class="token operator">&#x26;&#x26;</span> <span class="token function">tar</span> -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
 </span></code><input type="hidden" value="# 源码下载
 # 官网源码 https://golang.org/dl/ 需要翻墙
-wget https://storage.googleapis.com/golang/go1.9.darwin-amd64.pkg
-tar zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-# 新建GOPATH目录
-mkdir -p $HOME/gopath
+wget https://storage.googleapis.com/golang/go1.18.3.linux-amd64.tar.gz
+$ rm -rf /usr/local/go &#x26;&#x26; tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/go/bin
+</span></code><input type="hidden" value="export PATH=$PATH:/usr/local/go/bin
 "><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
         <h3 id="mac中通过brew命令安装"><a aria-hidden="true" tabindex="-1" href="#mac中通过brew命令安装" class="anchor"><span class="icon icon-link"></span></a>Mac中通过brew命令安装</h3>
         <p>使用<a href="http://brew.sh/">home brew</a>安装方便快捷安装Go，如果你想要在你的 Mac 系统上安装 Go，则必须使用 <code>Intel 64</code> 位处理器，Go 不支持 <code>PowerPC</code> 处理器。</p>
@@ -87,50 +89,84 @@ brew upgrade go             # 更新 go
         <p>通过<code>go env</code>查看go的详细信息</p>
         <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">→ go <span class="token function">env</span>
 </span><span class="code-line line-number" line="2">
-</span><span class="code-line line-number" line="3"><span class="token assign-left variable">GOARCH</span><span class="token operator">=</span><span class="token string">"amd64"</span>
-</span><span class="code-line line-number" line="4"><span class="token assign-left variable">GOBIN</span><span class="token operator">=</span><span class="token string">""</span>
-</span><span class="code-line line-number" line="5"><span class="token assign-left variable">GOEXE</span><span class="token operator">=</span><span class="token string">""</span>
-</span><span class="code-line line-number" line="6"><span class="token assign-left variable">GOHOSTARCH</span><span class="token operator">=</span><span class="token string">"amd64"</span>
-</span><span class="code-line line-number" line="7"><span class="token assign-left variable">GOHOSTOS</span><span class="token operator">=</span><span class="token string">"darwin"</span>
-</span><span class="code-line line-number" line="8"><span class="token assign-left variable">GOOS</span><span class="token operator">=</span><span class="token string">"darwin"</span>
-</span><span class="code-line line-number" line="9"><span class="token assign-left variable">GOPATH</span><span class="token operator">=</span><span class="token string">"/Users/kenny/go"</span>
-</span><span class="code-line line-number" line="10"><span class="token assign-left variable">GORACE</span><span class="token operator">=</span><span class="token string">""</span>
-</span><span class="code-line line-number" line="11"><span class="token assign-left variable">GOROOT</span><span class="token operator">=</span><span class="token string">"/usr/local/Cellar/go/1.9/libexec"</span>
-</span><span class="code-line line-number" line="12"><span class="token assign-left variable">GOTOOLDIR</span><span class="token operator">=</span><span class="token string">"/usr/local/Cellar/go/1.9/libexec/pkg/tool/darwin_amd64"</span>
-</span><span class="code-line line-number" line="13"><span class="token assign-left variable">GCCGO</span><span class="token operator">=</span><span class="token string">"gccgo"</span>
-</span><span class="code-line line-number" line="14"><span class="token assign-left variable">CC</span><span class="token operator">=</span><span class="token string">"clang"</span>
-</span><span class="code-line line-number" line="15"><span class="token assign-left variable">GOGCCFLAGS</span><span class="token operator">=</span><span class="token string">"-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/go-build377856897=/tmp/go-build -gno-record-gcc-switches -fno-common"</span>
-</span><span class="code-line line-number" line="16"><span class="token assign-left variable">CXX</span><span class="token operator">=</span><span class="token string">"clang++"</span>
-</span><span class="code-line line-number" line="17"><span class="token assign-left variable">CGO_ENABLED</span><span class="token operator">=</span><span class="token string">"1"</span>
-</span><span class="code-line line-number" line="18"><span class="token assign-left variable">CGO_CFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
-</span><span class="code-line line-number" line="19"><span class="token assign-left variable">CGO_CPPFLAGS</span><span class="token operator">=</span><span class="token string">""</span>
-</span><span class="code-line line-number" line="20"><span class="token assign-left variable">CGO_CXXFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
-</span><span class="code-line line-number" line="21"><span class="token assign-left variable">CGO_FFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
-</span><span class="code-line line-number" line="22"><span class="token assign-left variable">CGO_LDFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
-</span><span class="code-line line-number" line="23"><span class="token assign-left variable">PKG_CONFIG</span><span class="token operator">=</span><span class="token string">"pkg-config"</span>
+</span><span class="code-line line-number" line="3"><span class="token assign-left variable">GO111MODULE</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="4"><span class="token assign-left variable">GOARCH</span><span class="token operator">=</span><span class="token string">"arm64"</span>
+</span><span class="code-line line-number" line="5"><span class="token assign-left variable">GOBIN</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="6"><span class="token assign-left variable">GOCACHE</span><span class="token operator">=</span><span class="token string">"/Users/wangchujiang/Library/Caches/go-build"</span>
+</span><span class="code-line line-number" line="7"><span class="token assign-left variable">GOENV</span><span class="token operator">=</span><span class="token string">"/Users/wangchujiang/Library/Application Support/go/env"</span>
+</span><span class="code-line line-number" line="8"><span class="token assign-left variable">GOEXE</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="9"><span class="token assign-left variable">GOEXPERIMENT</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="10"><span class="token assign-left variable">GOFLAGS</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="11"><span class="token assign-left variable">GOHOSTARCH</span><span class="token operator">=</span><span class="token string">"arm64"</span>
+</span><span class="code-line line-number" line="12"><span class="token assign-left variable">GOHOSTOS</span><span class="token operator">=</span><span class="token string">"darwin"</span>
+</span><span class="code-line line-number" line="13"><span class="token assign-left variable">GOINSECURE</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="14"><span class="token assign-left variable">GOMODCACHE</span><span class="token operator">=</span><span class="token string">"/Users/wangchujiang/go/pkg/mod"</span>
+</span><span class="code-line line-number" line="15"><span class="token assign-left variable">GONOPROXY</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="16"><span class="token assign-left variable">GONOSUMDB</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="17"><span class="token assign-left variable">GOOS</span><span class="token operator">=</span><span class="token string">"darwin"</span>
+</span><span class="code-line line-number" line="18"><span class="token assign-left variable">GOPATH</span><span class="token operator">=</span><span class="token string">"/Users/wangchujiang/go"</span>
+</span><span class="code-line line-number" line="19"><span class="token assign-left variable">GOPRIVATE</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="20"><span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span><span class="token string">"https://proxy.golang.org,direct"</span>
+</span><span class="code-line line-number" line="21"><span class="token assign-left variable">GOROOT</span><span class="token operator">=</span><span class="token string">"/usr/local/go"</span>
+</span><span class="code-line line-number" line="22"><span class="token assign-left variable">GOSUMDB</span><span class="token operator">=</span><span class="token string">"sum.golang.org"</span>
+</span><span class="code-line line-number" line="23"><span class="token assign-left variable">GOTMPDIR</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="24"><span class="token assign-left variable">GOTOOLDIR</span><span class="token operator">=</span><span class="token string">"/usr/local/go/pkg/tool/darwin_arm64"</span>
+</span><span class="code-line line-number" line="25"><span class="token assign-left variable">GOVCS</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="26"><span class="token assign-left variable">GOVERSION</span><span class="token operator">=</span><span class="token string">"go1.18.3"</span>
+</span><span class="code-line line-number" line="27"><span class="token assign-left variable">GCCGO</span><span class="token operator">=</span><span class="token string">"gccgo"</span>
+</span><span class="code-line line-number" line="28"><span class="token assign-left variable">AR</span><span class="token operator">=</span><span class="token string">"ar"</span>
+</span><span class="code-line line-number" line="29"><span class="token assign-left variable">CC</span><span class="token operator">=</span><span class="token string">"clang"</span>
+</span><span class="code-line line-number" line="30"><span class="token assign-left variable">CXX</span><span class="token operator">=</span><span class="token string">"clang++"</span>
+</span><span class="code-line line-number" line="31"><span class="token assign-left variable">CGO_ENABLED</span><span class="token operator">=</span><span class="token string">"1"</span>
+</span><span class="code-line line-number" line="32"><span class="token assign-left variable">GOMOD</span><span class="token operator">=</span><span class="token string">"/dev/null"</span>
+</span><span class="code-line line-number" line="33"><span class="token assign-left variable">GOWORK</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="34"><span class="token assign-left variable">CGO_CFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
+</span><span class="code-line line-number" line="35"><span class="token assign-left variable">CGO_CPPFLAGS</span><span class="token operator">=</span><span class="token string">""</span>
+</span><span class="code-line line-number" line="36"><span class="token assign-left variable">CGO_CXXFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
+</span><span class="code-line line-number" line="37"><span class="token assign-left variable">CGO_FFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
+</span><span class="code-line line-number" line="38"><span class="token assign-left variable">CGO_LDFLAGS</span><span class="token operator">=</span><span class="token string">"-g -O2"</span>
+</span><span class="code-line line-number" line="39"><span class="token assign-left variable">PKG_CONFIG</span><span class="token operator">=</span><span class="token string">"pkg-config"</span>
+</span><span class="code-line line-number" line="40"><span class="token assign-left variable">GOGCCFLAGS</span><span class="token operator">=</span><span class="token string">"-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/rn/jv6_kn5j2wv1whyj3pqvpxbw0000gn/T/go-build947462154=/tmp/go-build -gno-record-gcc-switches -fno-common"</span>
 </span></code><input type="hidden" value="→ go env
 
-GOARCH=&#x22;amd64&#x22;
+GO111MODULE=&#x22;&#x22;
+GOARCH=&#x22;arm64&#x22;
 GOBIN=&#x22;&#x22;
+GOCACHE=&#x22;/Users/wangchujiang/Library/Caches/go-build&#x22;
+GOENV=&#x22;/Users/wangchujiang/Library/Application Support/go/env&#x22;
 GOEXE=&#x22;&#x22;
-GOHOSTARCH=&#x22;amd64&#x22;
+GOEXPERIMENT=&#x22;&#x22;
+GOFLAGS=&#x22;&#x22;
+GOHOSTARCH=&#x22;arm64&#x22;
 GOHOSTOS=&#x22;darwin&#x22;
+GOINSECURE=&#x22;&#x22;
+GOMODCACHE=&#x22;/Users/wangchujiang/go/pkg/mod&#x22;
+GONOPROXY=&#x22;&#x22;
+GONOSUMDB=&#x22;&#x22;
 GOOS=&#x22;darwin&#x22;
-GOPATH=&#x22;/Users/kenny/go&#x22;
-GORACE=&#x22;&#x22;
-GOROOT=&#x22;/usr/local/Cellar/go/1.9/libexec&#x22;
-GOTOOLDIR=&#x22;/usr/local/Cellar/go/1.9/libexec/pkg/tool/darwin_amd64&#x22;
+GOPATH=&#x22;/Users/wangchujiang/go&#x22;
+GOPRIVATE=&#x22;&#x22;
+GOPROXY=&#x22;https://proxy.golang.org,direct&#x22;
+GOROOT=&#x22;/usr/local/go&#x22;
+GOSUMDB=&#x22;sum.golang.org&#x22;
+GOTMPDIR=&#x22;&#x22;
+GOTOOLDIR=&#x22;/usr/local/go/pkg/tool/darwin_arm64&#x22;
+GOVCS=&#x22;&#x22;
+GOVERSION=&#x22;go1.18.3&#x22;
 GCCGO=&#x22;gccgo&#x22;
+AR=&#x22;ar&#x22;
 CC=&#x22;clang&#x22;
-GOGCCFLAGS=&#x22;-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/go-build377856897=/tmp/go-build -gno-record-gcc-switches -fno-common&#x22;
 CXX=&#x22;clang++&#x22;
 CGO_ENABLED=&#x22;1&#x22;
+GOMOD=&#x22;/dev/null&#x22;
+GOWORK=&#x22;&#x22;
 CGO_CFLAGS=&#x22;-g -O2&#x22;
 CGO_CPPFLAGS=&#x22;&#x22;
 CGO_CXXFLAGS=&#x22;-g -O2&#x22;
 CGO_FFLAGS=&#x22;-g -O2&#x22;
 CGO_LDFLAGS=&#x22;-g -O2&#x22;
 PKG_CONFIG=&#x22;pkg-config&#x22;
+GOGCCFLAGS=&#x22;-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/rn/jv6_kn5j2wv1whyj3pqvpxbw0000gn/T/go-build947462154=/tmp/go-build -gno-record-gcc-switches -fno-common&#x22;
 "><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
         <p>如果需要修改默认的环境变量配置修改 <code>vim ~/.bash_profile</code> 或者 <code>vim ~/.zshrc</code></p>
         <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment">#GOROOT</span>
@@ -164,165 +200,113 @@ export PATH=$PATH:$GOPATH/bin
 "><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
         <h3 id="标准命令详解"><a aria-hidden="true" tabindex="-1" href="#标准命令详解" class="anchor"><span class="icon icon-link"></span></a>标准命令详解</h3>
         <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">→ go --help
-</span><span class="code-line line-number" line="2">Go is a tool <span class="token keyword">for</span> managing Go <span class="token builtin class-name">source</span> code.
-</span><span class="code-line line-number" line="3">Go是用于管理Go源代码的工具。
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Go 是一个管理 Go 源代码的工具。
 </span><span class="code-line line-number" line="4">
-</span><span class="code-line line-number" line="5">Usage用法:
-</span><span class="code-line line-number" line="6">  go <span class="token builtin class-name">command</span> <span class="token punctuation">[</span>arguments<span class="token punctuation">]</span>
-</span><span class="code-line line-number" line="7">
-</span><span class="code-line line-number" line="8">The commands are:
-</span><span class="code-line line-number" line="9">
-</span><span class="code-line line-number" line="10">  build 命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
-</span><span class="code-line line-number" line="11">    -o 指定输出的文件名，可以带上路径，例如 go build -o a/b/c
-</span><span class="code-line line-number" line="12">    -i 安装相应的包，编译+go <span class="token function">install</span>
-</span><span class="code-line line-number" line="13">    -a 更新全部已经是最新的包的，但是对标准包不适用
-</span><span class="code-line line-number" line="14">    -n 把需要执行的编译命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-</span><span class="code-line line-number" line="15">    -p n 指定可以并行可运行的编译数目，默认是CPU数目
-</span><span class="code-line line-number" line="16">    -race 开启编译的时候自动检测数据竞争的情况，目前只支持64位的机器
-</span><span class="code-line line-number" line="17">    -v 打印出来我们正在编译的包名
-</span><span class="code-line line-number" line="18">    -work 打印出来编译时候的临时文件夹名称，并且如果已经存在的话就不要删除
-</span><span class="code-line line-number" line="19">    -x 打印出来执行的命令，其实就是和-n的结果类似，只是这个会执行
-</span><span class="code-line line-number" line="20">    -ccflags <span class="token string">'arg list'</span> 传递参数给5c, 6c, 8c 调用
-</span><span class="code-line line-number" line="21">    -compiler name 指定相应的编译器，gccgo还是gc
-</span><span class="code-line line-number" line="22">    -gccgoflags <span class="token string">'arg list'</span> 传递参数给gccgo编译连接调用
-</span><span class="code-line line-number" line="23">    -gcflags <span class="token string">'arg list'</span> 传递参数给5g, 6g, 8g 调用
-</span><span class="code-line line-number" line="24">    -installsuffix suffix 为了和默认的安装包区别开来，采用这个前缀来重新安装那些依赖的包，-race的时候默认已经是-installsuffix race,大家可以通过-n命令来验证
-</span><span class="code-line line-number" line="25">    -ldflags <span class="token string">'flag list'</span> 传递参数给5l, 6l, 8l 调用
-</span><span class="code-line line-number" line="26">    -tags <span class="token string">'tag list'</span> 设置在编译的时候可以适配的那些tag，详细的tag限制参考里面的http://golang.org/pkg/go/build/
-</span><span class="code-line line-number" line="27">  clean       删除掉执行其它命令时产生的一些文件和目录。
-</span><span class="code-line line-number" line="28">    -i 清除关联的安装的包和可运行文件，也就是通过go install安装的文件
-</span><span class="code-line line-number" line="29">    -n 把需要执行的清除命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-</span><span class="code-line line-number" line="30">    -r 循环的清除在import中引入的包
-</span><span class="code-line line-number" line="31">    -x 打印出来执行的详细命令，其实就是-n打印的执行版本
-</span><span class="code-line line-number" line="32">  doc 命令可以打印附于Go语言程序实体上的文档。
-</span><span class="code-line line-number" line="33">  <span class="token function">env</span> 用于打印Go语言的环境信息。
-</span><span class="code-line line-number" line="34">  bug 启动错误报告。
-</span><span class="code-line line-number" line="35">  fix 把指定代码包的所有Go语言源码文件中的旧版本代码修正为新版本的代码。
-</span><span class="code-line line-number" line="36">  <span class="token function">fmt</span> 在包源上运行gofmt。
-</span><span class="code-line line-number" line="37">    -l 显示那些需要格式化的文件
-</span><span class="code-line line-number" line="38">    -w 把改写后的内容直接写入到文件中，而不是作为结果打印到标准输出。
-</span><span class="code-line line-number" line="39">    -r 添加形如“a<span class="token punctuation">[</span>b:len<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">]</span> -<span class="token operator">></span> a<span class="token punctuation">[</span>b:<span class="token punctuation">]</span>”的重写规则，方便我们做批量替换
-</span><span class="code-line line-number" line="40">    -s 简化文件中的代码
-</span><span class="code-line line-number" line="41">    -d 显示格式化前后的diff而不是写入文件，默认是false
-</span><span class="code-line line-number" line="42">    -e 打印所有的语法错误到标准输出。如果不使用此标记，则只会打印不同行的前10个错误。
-</span><span class="code-line line-number" line="43">    -cpuprofile 支持调试模式，写入相应的cpufile到指定的文件
-</span><span class="code-line line-number" line="44">  generate 通过处理源生成Go文件。
-</span><span class="code-line line-number" line="45">  get 下载或更新安装指定的代码包及其依赖包，并对它们进行编译和安装。
-</span><span class="code-line line-number" line="46">    -d 只下载不安装
-</span><span class="code-line line-number" line="47">    -f 只有在你包含了-u参数的时候才有效，不让-u去验证import中的每一个都已经获取了，这对于本地fork的包特别有用
-</span><span class="code-line line-number" line="48">    -fix 在获取源码之后先运行fix，然后再去做其他的事情
-</span><span class="code-line line-number" line="49">    -t 同时也下载需要为运行测试所需要的包
-</span><span class="code-line line-number" line="50">    -u 强制使用网络去更新包和它的依赖包
-</span><span class="code-line line-number" line="51">    -v 显示执行的命令
-</span><span class="code-line line-number" line="52">  <span class="token function">install</span> 用于编译并安装指定的代码包及它们的依赖包。
-</span><span class="code-line line-number" line="53">  list 列出指定的代码包的信息。
-</span><span class="code-line line-number" line="54">  run 命令可以编译并运行命令源码文件。
-</span><span class="code-line line-number" line="55">  <span class="token builtin class-name">test</span> 对Go语言编写的程序进行测试。
-</span><span class="code-line line-number" line="56">    -bench regexp 执行相应的benchmarks，例如 -bench<span class="token operator">=</span>.
-</span><span class="code-line line-number" line="57">    -cover 开启测试覆盖率
-</span><span class="code-line line-number" line="58">    -run regexp 只运行regexp匹配的函数，例如 -run<span class="token operator">=</span>Array 那么就执行包含有Array开头的函数
-</span><span class="code-line line-number" line="59">    -v 显示测试的详细命令
-</span><span class="code-line line-number" line="60">  tool 运行指定的go工具
-</span><span class="code-line line-number" line="61">    go tool fix <span class="token builtin class-name">.</span> 用来修复以前老版本的代码到新版本，例如go1之前老版本的代码转化到go1,例如API的变化
-</span><span class="code-line line-number" line="62">    go tool vet directory<span class="token operator">|</span>files 用来分析当前目录的代码是否都是正确的代码,例如是不是调用fmt.Printf里面的参数不正确，例如函数里面提前return了然后出现了无用代码之类的。
-</span><span class="code-line line-number" line="63">  version 打印Go的版本信息
-</span><span class="code-line line-number" line="64">  vet 用于检查Go语言源码中静态错误的简单工具。
-</span><span class="code-line line-number" line="65">
-</span><span class="code-line line-number" line="66">Use <span class="token string">"go help [command]"</span> <span class="token keyword">for</span> <span class="token function">more</span> information about a command.
-</span><span class="code-line line-number" line="67">
-</span><span class="code-line line-number" line="68">Additional <span class="token builtin class-name">help</span> topics:
-</span><span class="code-line line-number" line="69">
-</span><span class="code-line line-number" line="70">  c           calling between Go and C
-</span><span class="code-line line-number" line="71">  buildmode   description of build modes
-</span><span class="code-line line-number" line="72">  filetype    <span class="token function">file</span> types
-</span><span class="code-line line-number" line="73">  gopath      GOPATH environment variable
-</span><span class="code-line line-number" line="74">  environment environment variables
-</span><span class="code-line line-number" line="75">  importpath  <span class="token function">import</span> path syntax
-</span><span class="code-line line-number" line="76">  packages    description of package lists
-</span><span class="code-line line-number" line="77">  testflag    description of testing flags
-</span><span class="code-line line-number" line="78">  testfunc    description of testing functions
-</span><span class="code-line line-number" line="79">
-</span><span class="code-line line-number" line="80">Use <span class="token string">"go help [topic]"</span> <span class="token keyword">for</span> <span class="token function">more</span> information about that topic.
+</span><span class="code-line line-number" line="5">用法:
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7">  go <span class="token operator">&#x3C;</span>command<span class="token operator">></span> <span class="token punctuation">[</span>arguments<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">命令是：
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">  bug         开始一个错误报告。 start a bug report
+</span><span class="code-line line-number" line="12">  build       编译包和依赖。 compile packages and dependencies
+</span><span class="code-line line-number" line="13">  clean       删除目标文件和缓存文件。 remove object files and cached files
+</span><span class="code-line line-number" line="14">  doc         显示包或符号的文档。 show documentation <span class="token keyword">for</span> package or symbol
+</span><span class="code-line line-number" line="15">  <span class="token function">env</span>         打印Go环境信息。 print Go environment information
+</span><span class="code-line line-number" line="16">  fix         更新软件包以使用新的 API。 update packages to use new APIs
+</span><span class="code-line line-number" line="17">  <span class="token function">fmt</span>         gofmt（重新格式化）包源。 gofmt <span class="token punctuation">(</span>reformat<span class="token punctuation">)</span> package sources
+</span><span class="code-line line-number" line="18">  generate    通过处理源生成 Go 文件。 generate Go files by processing <span class="token builtin class-name">source</span>
+</span><span class="code-line line-number" line="19">  get         将依赖项添加到当前模块并安装它们。 <span class="token function">add</span> dependencies to current module and <span class="token function">install</span> them
+</span><span class="code-line line-number" line="20">  <span class="token function">install</span>     编译和安装包和依赖项。 compile and <span class="token function">install</span> packages and dependencies
+</span><span class="code-line line-number" line="21">  list        列出包或模块。 list packages or modules
+</span><span class="code-line line-number" line="22">  mod         模块维护。 module maintenance
+</span><span class="code-line line-number" line="23">  work        工作空间维护。 workspace maintenance
+</span><span class="code-line line-number" line="24">  run         编译并运行 Go 程序。 compile and run Go program
+</span><span class="code-line line-number" line="25">  <span class="token builtin class-name">test</span>        测试包。 <span class="token builtin class-name">test</span> packages
+</span><span class="code-line line-number" line="26">  tool        运行指定的 go 工具。 run specified go tool
+</span><span class="code-line line-number" line="27">  version     打印 Go 版本。 print Go version
+</span><span class="code-line line-number" line="28">  vet         报告包中可能出现的错误。 report likely mistakes <span class="token keyword">in</span> packages
+</span><span class="code-line line-number" line="29">
+</span><span class="code-line line-number" line="30">使用“go <span class="token builtin class-name">help</span> <span class="token operator">&#x3C;</span>command<span class="token operator">></span>”获取有关命令的更多信息。
+</span><span class="code-line line-number" line="31">
+</span><span class="code-line line-number" line="32">其他帮助主题：
+</span><span class="code-line line-number" line="33">
+</span><span class="code-line line-number" line="34">  buildconstraint 构建约束。 build constraints
+</span><span class="code-line line-number" line="35">  buildmode       构建模式。 build modes
+</span><span class="code-line line-number" line="36">  c               Go 和 C 之间的调用。 calling between Go and C
+</span><span class="code-line line-number" line="37">  cache           构建和测试缓存。 build and <span class="token builtin class-name">test</span> caching
+</span><span class="code-line line-number" line="38">  environment     环境变量。 environment variables
+</span><span class="code-line line-number" line="39">  filetype        文件类型。 <span class="token function">file</span> types
+</span><span class="code-line line-number" line="40">  go.mod          go.mod 文件。 the go.mod <span class="token function">file</span>
+</span><span class="code-line line-number" line="41">  gopath          GOPATH 环境变量。 GOPATH environment variable
+</span><span class="code-line line-number" line="42">  gopath-get      遗留的 GOPATH 去获取。 legacy GOPATH go get
+</span><span class="code-line line-number" line="43">  goproxy         模块代理协议。 module proxy protocol
+</span><span class="code-line line-number" line="44">  importpath      导入路径语法。 <span class="token function">import</span> path syntax
+</span><span class="code-line line-number" line="45">  modules         模块、模块版本等。 modules, module versions, and <span class="token function">more</span>
+</span><span class="code-line line-number" line="46">  module-get      模块感知 go get。 module-aware go get
+</span><span class="code-line line-number" line="47">  module-auth     使用 go.sum 进行模块认证。 module authentication using go.sum
+</span><span class="code-line line-number" line="48">  packages        包装清单和模式。 package lists and patterns
+</span><span class="code-line line-number" line="49">  private         下载非公开代码的配置。 configuration <span class="token keyword">for</span> downloading non-public code
+</span><span class="code-line line-number" line="50">  testflag        测试标志。 testing flags
+</span><span class="code-line line-number" line="51">  testfunc        测试功能。 testing functions
+</span><span class="code-line line-number" line="52">  vcs             使用 GOVCS 控制版本控制。 controlling version control with GOVCS
+</span><span class="code-line line-number" line="53">
+</span><span class="code-line line-number" line="54">Use <span class="token string">"go help &#x3C;topic>"</span> <span class="token keyword">for</span> <span class="token function">more</span> information about that topic.
 </span></code><input type="hidden" value="→ go --help
-Go is a tool for managing Go source code.
-Go是用于管理Go源代码的工具。
 
-Usage用法:
-  go command [arguments]
+Go 是一个管理 Go 源代码的工具。
 
-The commands are:
+用法:
 
-  build 命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
-    -o 指定输出的文件名，可以带上路径，例如 go build -o a/b/c
-    -i 安装相应的包，编译+go install
-    -a 更新全部已经是最新的包的，但是对标准包不适用
-    -n 把需要执行的编译命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-    -p n 指定可以并行可运行的编译数目，默认是CPU数目
-    -race 开启编译的时候自动检测数据竞争的情况，目前只支持64位的机器
-    -v 打印出来我们正在编译的包名
-    -work 打印出来编译时候的临时文件夹名称，并且如果已经存在的话就不要删除
-    -x 打印出来执行的命令，其实就是和-n的结果类似，只是这个会执行
-    -ccflags &#x27;arg list&#x27; 传递参数给5c, 6c, 8c 调用
-    -compiler name 指定相应的编译器，gccgo还是gc
-    -gccgoflags &#x27;arg list&#x27; 传递参数给gccgo编译连接调用
-    -gcflags &#x27;arg list&#x27; 传递参数给5g, 6g, 8g 调用
-    -installsuffix suffix 为了和默认的安装包区别开来，采用这个前缀来重新安装那些依赖的包，-race的时候默认已经是-installsuffix race,大家可以通过-n命令来验证
-    -ldflags &#x27;flag list&#x27; 传递参数给5l, 6l, 8l 调用
-    -tags &#x27;tag list&#x27; 设置在编译的时候可以适配的那些tag，详细的tag限制参考里面的http://golang.org/pkg/go/build/
-  clean       删除掉执行其它命令时产生的一些文件和目录。
-    -i 清除关联的安装的包和可运行文件，也就是通过go install安装的文件
-    -n 把需要执行的清除命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
-    -r 循环的清除在import中引入的包
-    -x 打印出来执行的详细命令，其实就是-n打印的执行版本
-  doc 命令可以打印附于Go语言程序实体上的文档。
-  env 用于打印Go语言的环境信息。
-  bug 启动错误报告。
-  fix 把指定代码包的所有Go语言源码文件中的旧版本代码修正为新版本的代码。
-  fmt 在包源上运行gofmt。
-    -l 显示那些需要格式化的文件
-    -w 把改写后的内容直接写入到文件中，而不是作为结果打印到标准输出。
-    -r 添加形如“a[b:len(a)] -> a[b:]”的重写规则，方便我们做批量替换
-    -s 简化文件中的代码
-    -d 显示格式化前后的diff而不是写入文件，默认是false
-    -e 打印所有的语法错误到标准输出。如果不使用此标记，则只会打印不同行的前10个错误。
-    -cpuprofile 支持调试模式，写入相应的cpufile到指定的文件
-  generate 通过处理源生成Go文件。
-  get 下载或更新安装指定的代码包及其依赖包，并对它们进行编译和安装。
-    -d 只下载不安装
-    -f 只有在你包含了-u参数的时候才有效，不让-u去验证import中的每一个都已经获取了，这对于本地fork的包特别有用
-    -fix 在获取源码之后先运行fix，然后再去做其他的事情
-    -t 同时也下载需要为运行测试所需要的包
-    -u 强制使用网络去更新包和它的依赖包
-    -v 显示执行的命令
-  install 用于编译并安装指定的代码包及它们的依赖包。
-  list 列出指定的代码包的信息。
-  run 命令可以编译并运行命令源码文件。
-  test 对Go语言编写的程序进行测试。
-    -bench regexp 执行相应的benchmarks，例如 -bench=.
-    -cover 开启测试覆盖率
-    -run regexp 只运行regexp匹配的函数，例如 -run=Array 那么就执行包含有Array开头的函数
-    -v 显示测试的详细命令
-  tool 运行指定的go工具
-    go tool fix . 用来修复以前老版本的代码到新版本，例如go1之前老版本的代码转化到go1,例如API的变化
-    go tool vet directory|files 用来分析当前目录的代码是否都是正确的代码,例如是不是调用fmt.Printf里面的参数不正确，例如函数里面提前return了然后出现了无用代码之类的。
-  version 打印Go的版本信息
-  vet 用于检查Go语言源码中静态错误的简单工具。
+  go <command> [arguments]
 
-Use &#x22;go help [command]&#x22; for more information about a command.
+命令是：
 
-Additional help topics:
+  bug         开始一个错误报告。 start a bug report
+  build       编译包和依赖。 compile packages and dependencies
+  clean       删除目标文件和缓存文件。 remove object files and cached files
+  doc         显示包或符号的文档。 show documentation for package or symbol
+  env         打印Go环境信息。 print Go environment information
+  fix         更新软件包以使用新的 API。 update packages to use new APIs
+  fmt         gofmt（重新格式化）包源。 gofmt (reformat) package sources
+  generate    通过处理源生成 Go 文件。 generate Go files by processing source
+  get         将依赖项添加到当前模块并安装它们。 add dependencies to current module and install them
+  install     编译和安装包和依赖项。 compile and install packages and dependencies
+  list        列出包或模块。 list packages or modules
+  mod         模块维护。 module maintenance
+  work        工作空间维护。 workspace maintenance
+  run         编译并运行 Go 程序。 compile and run Go program
+  test        测试包。 test packages
+  tool        运行指定的 go 工具。 run specified go tool
+  version     打印 Go 版本。 print Go version
+  vet         报告包中可能出现的错误。 report likely mistakes in packages
 
-  c           calling between Go and C
-  buildmode   description of build modes
-  filetype    file types
-  gopath      GOPATH environment variable
-  environment environment variables
-  importpath  import path syntax
-  packages    description of package lists
-  testflag    description of testing flags
-  testfunc    description of testing functions
+使用“go help <command>”获取有关命令的更多信息。
 
-Use &#x22;go help [topic]&#x22; for more information about that topic.
+其他帮助主题：
+
+  buildconstraint 构建约束。 build constraints
+  buildmode       构建模式。 build modes
+  c               Go 和 C 之间的调用。 calling between Go and C
+  cache           构建和测试缓存。 build and test caching
+  environment     环境变量。 environment variables
+  filetype        文件类型。 file types
+  go.mod          go.mod 文件。 the go.mod file
+  gopath          GOPATH 环境变量。 GOPATH environment variable
+  gopath-get      遗留的 GOPATH 去获取。 legacy GOPATH go get
+  goproxy         模块代理协议。 module proxy protocol
+  importpath      导入路径语法。 import path syntax
+  modules         模块、模块版本等。 modules, module versions, and more
+  module-get      模块感知 go get。 module-aware go get
+  module-auth     使用 go.sum 进行模块认证。 module authentication using go.sum
+  packages        包装清单和模式。 package lists and patterns
+  private         下载非公开代码的配置。 configuration for downloading non-public code
+  testflag        测试标志。 testing flags
+  testfunc        测试功能。 testing functions
+  vcs             使用 GOVCS 控制版本控制。 controlling version control with GOVCS
+
+Use &#x22;go help <topic>&#x22; for more information about that topic.
 "><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
         <p>其它命令</p>
         <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token function">cat</span> <span class="token variable">$GOROOT</span>/VERSION  <span class="token comment"># 查看版本</span>
@@ -402,7 +386,7 @@ govendor test +local
         <ul>
           <li>删除 Go 的安装文件目录，这通常是在 <code>Linux</code>，<code>macOS</code> 和 <code>FreeBSD</code> 下的 <code>/usr/local/</code> go 或者在 Windows 下的 <code>c:\Go</code> 下。</li>
           <li>同时删除环境变量， <code>Linux</code> 和 <code>FreeBSD</code> 编辑 <code>/etc/profile</code> 或者 <code>$HOME/.profile</code>。</li>
-          <li>如果你是 <code>macOS</code> 你需要删除 <code>/etc/paths.d/go</code> 文件。</li>
+          <li>如果你是 <code>macOS</code> 你需要删除 <code>/etc/paths.d/go</code>，<code>/usr/local/go</code> 文件。</li>
         </ul>
         <h2 id="运行go"><a aria-hidden="true" tabindex="-1" href="#运行go" class="anchor"><span class="icon icon-link"></span></a>运行Go</h2>
         <h3 id="运行go文档在线预览文档"><a aria-hidden="true" tabindex="-1" href="#运行go文档在线预览文档" class="anchor"><span class="icon icon-link"></span></a>运行Go文档，在线预览文档</h3>
@@ -603,28 +587,28 @@ p = &#x26;i
         <pre class="language-go"><code class="language-go code-highlight"><span class="code-line line-number" line="1"><span class="token keyword">package</span> main
 </span><span class="code-line line-number" line="2"><span class="token keyword">import</span> <span class="token string">"fmt"</span>
 </span><span class="code-line line-number" line="3"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-</span><span class="code-line line-number" line="4">	i<span class="token punctuation">,</span> j <span class="token operator">:=</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">2701</span>
-</span><span class="code-line line-number" line="5">	p <span class="token operator">:=</span> <span class="token operator">&#x26;</span>i         <span class="token comment">// 指向我 i</span>
-</span><span class="code-line line-number" line="6">	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span> <span class="token comment">// 通过指针读 i</span>
-</span><span class="code-line line-number" line="7">	<span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">21</span>         <span class="token comment">// 通过指针设置 i</span>
-</span><span class="code-line line-number" line="8">	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>  <span class="token comment">// 看到i的新值</span>
+</span><span class="code-line line-number" line="4">  i<span class="token punctuation">,</span> j <span class="token operator">:=</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">2701</span>
+</span><span class="code-line line-number" line="5">  p <span class="token operator">:=</span> <span class="token operator">&#x26;</span>i         <span class="token comment">// 指向我 i</span>
+</span><span class="code-line line-number" line="6">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span> <span class="token comment">// 通过指针读 i</span>
+</span><span class="code-line line-number" line="7">  <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">21</span>         <span class="token comment">// 通过指针设置 i</span>
+</span><span class="code-line line-number" line="8">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>  <span class="token comment">// 看到i的新值</span>
 </span><span class="code-line line-number" line="9">
-</span><span class="code-line line-number" line="10">	p <span class="token operator">=</span> <span class="token operator">&#x26;</span>j         <span class="token comment">// 指向我 j</span>
-</span><span class="code-line line-number" line="11">	<span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">*</span>p <span class="token operator">/</span> <span class="token number">37</span>   <span class="token comment">// 通过指针划分 j</span>
-</span><span class="code-line line-number" line="12">	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token comment">// 看到j的新值</span>
+</span><span class="code-line line-number" line="10">  p <span class="token operator">=</span> <span class="token operator">&#x26;</span>j         <span class="token comment">// 指向我 j</span>
+</span><span class="code-line line-number" line="11">  <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">*</span>p <span class="token operator">/</span> <span class="token number">37</span>   <span class="token comment">// 通过指针划分 j</span>
+</span><span class="code-line line-number" line="12">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token comment">// 看到j的新值</span>
 </span><span class="code-line line-number" line="13"><span class="token punctuation">}</span>
 </span></code><input type="hidden" value="package main
 import &#x22;fmt&#x22;
 func main() {
-	i, j := 42, 2701
-	p := &#x26;i         // 指向我 i
-	fmt.Println(*p) // 通过指针读 i
-	*p = 21         // 通过指针设置 i
-	fmt.Println(i)  // 看到i的新值
+  i, j := 42, 2701
+  p := &#x26;i         // 指向我 i
+  fmt.Println(*p) // 通过指针读 i
+  *p = 21         // 通过指针设置 i
+  fmt.Println(i)  // 看到i的新值
 
-	p = &#x26;j         // 指向我 j
-	*p = *p / 37   // 通过指针划分 j
-	fmt.Println(j) // 看到j的新值
+  p = &#x26;j         // 指向我 j
+  *p = *p / 37   // 通过指针划分 j
+  fmt.Println(j) // 看到j的新值
 }
 "><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
         <h3 id="复合类型"><a aria-hidden="true" tabindex="-1" href="#复合类型" class="anchor"><span class="icon icon-link"></span></a>复合类型</h3>
@@ -1363,21 +1347,21 @@ int val = a[2][3]
         <pre class="language-go"><code class="language-go code-highlight"><span class="code-line line-number" line="1"><span class="token keyword">package</span> main
 </span><span class="code-line line-number" line="2"><span class="token keyword">import</span> <span class="token string">"fmt"</span>
 </span><span class="code-line line-number" line="3"><span class="token keyword">type</span> Vertex <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-</span><span class="code-line line-number" line="4">	X <span class="token builtin">int</span>
-</span><span class="code-line line-number" line="5">	Y <span class="token builtin">int</span>
+</span><span class="code-line line-number" line="4">  X <span class="token builtin">int</span>
+</span><span class="code-line line-number" line="5">  Y <span class="token builtin">int</span>
 </span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
 </span><span class="code-line line-number" line="7"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="code-line line-number" line="8">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>Vertex<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span><span class="code-line line-number" line="9">  
 </span><span class="code-line line-number" line="10">  <span class="token comment">// 结构体字段使用点号来访问。</span>
-</span><span class="code-line line-number" line="11">	v <span class="token operator">:=</span> Vertex<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
-</span><span class="code-line line-number" line="12">	v<span class="token punctuation">.</span>X <span class="token operator">=</span> <span class="token number">4</span>
+</span><span class="code-line line-number" line="11">  v <span class="token operator">:=</span> Vertex<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12">  v<span class="token punctuation">.</span>X <span class="token operator">=</span> <span class="token number">4</span>
 </span><span class="code-line line-number" line="13">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>X<span class="token punctuation">)</span>
 </span><span class="code-line line-number" line="14">  
 </span><span class="code-line line-number" line="15">  <span class="token comment">// 结构体字段可以通过结构体指针来访问。</span>
-</span><span class="code-line line-number" line="16">	e <span class="token operator">:=</span> Vertex<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
-</span><span class="code-line line-number" line="17">	p <span class="token operator">:=</span> <span class="token operator">&#x26;</span>e
-</span><span class="code-line line-number" line="18">	p<span class="token punctuation">.</span>X <span class="token operator">=</span> <span class="token number">1e9</span>
+</span><span class="code-line line-number" line="16">  e <span class="token operator">:=</span> Vertex<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="17">  p <span class="token operator">:=</span> <span class="token operator">&#x26;</span>e
+</span><span class="code-line line-number" line="18">  p<span class="token punctuation">.</span>X <span class="token operator">=</span> <span class="token number">1e9</span>
 </span><span class="code-line line-number" line="19">  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
 </span><span class="code-line line-number" line="20">  
 </span><span class="code-line line-number" line="21">  
@@ -1392,21 +1376,21 @@ int val = a[2][3]
 </span></code><input type="hidden" value="package main
 import &#x22;fmt&#x22;
 type Vertex struct {
-	X int
-	Y int
+  X int
+  Y int
 }
 func main() {
   fmt.Println(Vertex{1, 2})
   
   // 结构体字段使用点号来访问。
-	v := Vertex{1, 2}
-	v.X = 4
+  v := Vertex{1, 2}
+  v.X = 4
   fmt.Println(v.X)
   
   // 结构体字段可以通过结构体指针来访问。
-	e := Vertex{1, 2}
-	p := &#x26;e
-	p.X = 1e9
+  e := Vertex{1, 2}
+  p := &#x26;e
+  p.X = 1e9
   fmt.Println(e)
   
   
@@ -2152,8 +2136,8 @@ func main() {
 </span><span class="code-line line-number" line="2"><span class="token keyword">import</span> <span class="token string">"fmt"</span>
 </span><span class="code-line line-number" line="3"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="code-line line-number" line="4">
-</span><span class="code-line line-number" line="5">  <span class="token keyword">var</span> a <span class="token builtin">uint</span> <span class="token operator">=</span> <span class="token number">60</span>	<span class="token comment">/* 60 = 0011 1100 */</span>  
-</span><span class="code-line line-number" line="6">  <span class="token keyword">var</span> b <span class="token builtin">uint</span> <span class="token operator">=</span> <span class="token number">13</span>	<span class="token comment">/* 13 = 0000 1101 */</span>
+</span><span class="code-line line-number" line="5">  <span class="token keyword">var</span> a <span class="token builtin">uint</span> <span class="token operator">=</span> <span class="token number">60</span>  <span class="token comment">/* 60 = 0011 1100 */</span>  
+</span><span class="code-line line-number" line="6">  <span class="token keyword">var</span> b <span class="token builtin">uint</span> <span class="token operator">=</span> <span class="token number">13</span>  <span class="token comment">/* 13 = 0000 1101 */</span>
 </span><span class="code-line line-number" line="7">  <span class="token keyword">var</span> c <span class="token builtin">uint</span> <span class="token operator">=</span> <span class="token number">0</span>          
 </span><span class="code-line line-number" line="8">
 </span><span class="code-line line-number" line="9">  c <span class="token operator">=</span> a <span class="token operator">&#x26;</span> b       <span class="token comment">/* 12 = 0000 1100 */</span> 
@@ -2175,8 +2159,8 @@ func main() {
 import &#x22;fmt&#x22;
 func main() {
 
-  var a uint = 60	/* 60 = 0011 1100 */  
-  var b uint = 13	/* 13 = 0000 1101 */
+  var a uint = 60  /* 60 = 0011 1100 */  
+  var b uint = 13  /* 13 = 0000 1101 */
   var c uint = 0          
 
   c = a &#x26; b       /* 12 = 0000 1100 */ 
@@ -2391,7 +2375,7 @@ func main() {
 </span><span class="code-line line-number" line="12">  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"第 3 行 - c 变量类型为 = %T\n"</span><span class="token punctuation">,</span> c <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 第 3 行 - c 变量类型为 = float32</span>
 </span><span class="code-line line-number" line="13">
 </span><span class="code-line line-number" line="14">  <span class="token comment">/*  &#x26; 和 * 运算符实例 */</span>
-</span><span class="code-line line-number" line="15">  ptr <span class="token operator">=</span> <span class="token operator">&#x26;</span>a	<span class="token comment">/* 'ptr' 包含了 'a' 变量的地址 */</span>
+</span><span class="code-line line-number" line="15">  ptr <span class="token operator">=</span> <span class="token operator">&#x26;</span>a  <span class="token comment">/* 'ptr' 包含了 'a' 变量的地址 */</span>
 </span><span class="code-line line-number" line="16">  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"a 的值为  %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// a 的值为  4</span>
 </span><span class="code-line line-number" line="17">  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"*ptr 为 %d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// *ptr 为 4</span>
 </span><span class="code-line line-number" line="18"><span class="token punctuation">}</span>
@@ -2409,7 +2393,7 @@ func main() {
   fmt.Printf(&#x22;第 3 行 - c 变量类型为 = %T\n&#x22;, c ); // 第 3 行 - c 变量类型为 = float32
 
   /*  &#x26; 和 * 运算符实例 */
-  ptr = &#x26;a	/* &#x27;ptr&#x27; 包含了 &#x27;a&#x27; 变量的地址 */
+  ptr = &#x26;a  /* &#x27;ptr&#x27; 包含了 &#x27;a&#x27; 变量的地址 */
   fmt.Printf(&#x22;a 的值为  %d\n&#x22;, a);   // a 的值为  4
   fmt.Printf(&#x22;*ptr 为 %d\n&#x22;, *ptr); // *ptr 为 4
 }
