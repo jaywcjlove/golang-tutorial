@@ -1,6 +1,6 @@
 module mod2
 
-go 1.17
+go 1.19
 
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
