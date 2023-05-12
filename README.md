@@ -1350,9 +1350,9 @@ func main() {
   c = a % b
   fmt.Printf("第五行 - c 的值为 %d\n", c ) // 第五行 - c 的值为 1
   a++
-  fmt.Printf("第六行 - c 的值为 %d\n", a ) // 第六行 - c 的值为 22
+  fmt.Printf("第六行 - a 的值为 %d\n", a ) // 第六行 - a 的值为 22
   a--
-  fmt.Printf("第七行 - c 的值为 %d\n", a ) // 第七行 - c 的值为 21
+  fmt.Printf("第七行 - a 的值为 %d\n", a ) // 第七行 - a 的值为 21
 }
 ```
 
