@@ -3,6 +3,7 @@ Go语言快速入门
 ===
 <!--idoc:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![CI](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/golang-tutorial/actions/workflows/ci.yml)
 ![golang v1.18.3](https://img.shields.io/static/v1?label=&message=Golang%201.18.3&color=blue&logo=go&logoColor=white)
 
